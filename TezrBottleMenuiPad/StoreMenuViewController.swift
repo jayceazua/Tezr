@@ -22,6 +22,10 @@ class StoreMenuViewController: UIViewController {
     
     // MARK: - RETURN VALUES
     
+    private func sectionAt(_ indexPath: IndexPath, forCollectionView tag: Int) -> SectionItem {
+        return self.menu.categories[tag].sectionItems[indexPath.section]
+    }
+    
     private func itemAt(_ indexPath: IndexPath, forCollectionView tag: Int) -> Item {
         return self.menu.categories[tag].sectionItems[indexPath.section].items[indexPath.row]
     }
@@ -46,7 +50,7 @@ class StoreMenuViewController: UIViewController {
                 alignment: .fill
             )
             
-            //TODO: create category header label
+            // category label
             let categoryLabel = UILabel(frame: CGRect.zero)
             categoryLabel.translatesAutoresizingMaskIntoConstraints = false
             categoryLabel.text = aCategory.title
@@ -55,12 +59,13 @@ class StoreMenuViewController: UIViewController {
             categoryLabel.font = UIFont.preferredFont(forTextStyle: .title2)
             vertStackView.addArrangedSubview(categoryLabel)
             
+            //create collection view layout
             let collectionViewLayout = UICollectionViewFlowLayout()
             let horizontalPadding: CGFloat = 16
             collectionViewLayout.sectionInset = UIEdgeInsets(
-                top: 20,
+                top: 0,
                 left: horizontalPadding,
-                bottom: 10,
+                bottom: 0,
                 right: horizontalPadding
             )
             
@@ -74,6 +79,10 @@ class StoreMenuViewController: UIViewController {
             }
             collectionViewLayout.itemSize = cellSize
             
+            collectionViewLayout.headerReferenceSize = CGSize(width: menuWidth, height: 48)
+            collectionViewLayout.sectionHeadersPinToVisibleBounds = true
+            
+            //create collection view
             let collectionView = UICollectionView(
                 frame: CGRect.zero,
                 collectionViewLayout: collectionViewLayout
@@ -82,8 +91,14 @@ class StoreMenuViewController: UIViewController {
             collectionView.dataSource = self
             collectionView.delegate = self
             collectionView.tag = index
+            collectionView.alwaysBounceVertical = true
             
             collectionView.register(BottleCollectionViewCell.nib, forCellWithReuseIdentifier: "bottle cell")
+            collectionView.register(
+                MenuHeaderCollectionReusableView.nib,
+                forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                withReuseIdentifier: MenuHeaderCollectionReusableView.identifier
+            )
             vertStackView.addArrangedSubview(collectionView)
             
             //add to a stack view
@@ -170,6 +185,24 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
         let category = self.menu.categories[collectionView.tag]
         
         return category.sectionItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: MenuHeaderCollectionReusableView.identifier,
+                for: indexPath
+                ) as! MenuHeaderCollectionReusableView
+            
+            let section = sectionAt(indexPath, forCollectionView: collectionView.tag)
+            headerView.configure(string: section.title)
+
+            return headerView
+        default:
+            fatalError("unhanndled kind \(kind)")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

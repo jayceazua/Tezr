@@ -24,6 +24,8 @@
 		E98F0F2C20D81B8C008545D2 /* UniversalExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */; };
 		E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */; };
 		E98F0F3020D846FA008545D2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2F20D846FA008545D2 /* Currency.swift */; };
+		E98F0F3320D855F8008545D2 /* MenuHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */; };
+		E98F0F3420D855F8008545D2 /* MenuHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniversalExtentions.swift; path = "../../../../../My Projects/Swift Source Files/UniversalExtentions.swift"; sourceTree = "<group>"; };
 		E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UniversalExtensions+Date.swift"; path = "../../../../../My Projects/Swift Source Files/UniversalExtensions+Date.swift"; sourceTree = "<group>"; };
 		E98F0F2F20D846FA008545D2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			children = (
 				E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */,
 				E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */,
+				E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */,
+				E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */,
 			);
 			name = UICustom;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */,
 				E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */,
 				0FBCFB0620D32D8300F3494E /* Assets.xcassets in Resources */,
+				E98F0F3420D855F8008545D2 /* MenuHeaderCollectionReusableView.xib in Resources */,
 				E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */,
 				0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */,
 			);
@@ -278,6 +285,7 @@
 				E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
+				E98F0F3320D855F8008545D2 /* MenuHeaderCollectionReusableView.swift in Sources */,
 				E98F0F2C20D81B8C008545D2 /* UniversalExtentions.swift in Sources */,
 				E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */,
 			);

@@ -164,9 +164,40 @@
 						<key>price</key>
 						<integer>3000</integer>
 					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Brand Dos</string>
+				<key>items</key>
+				<array>
 					<dict>
 						<key>sku</key>
-						<string>124412415</string>
+						<string>987654321</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>125231534</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>325125532</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>531532523</string>
 						<key>title</key>
 						<string>Drink 1</string>
 						<key>price</key>
