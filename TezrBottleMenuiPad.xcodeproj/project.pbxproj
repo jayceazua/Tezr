@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */; };
-		0FBCFB0120D32D8100F3494E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0020D32D8100F3494E /* ViewController.swift */; };
 		0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0220D32D8100F3494E /* Main.storyboard */; };
 		0FBCFB0620D32D8300F3494E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0520D32D8300F3494E /* Assets.xcassets */; };
 		0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0720D32D8300F3494E /* LaunchScreen.storyboard */; };
@@ -18,6 +17,7 @@
 		E98F0F1620D74AB1008545D2 /* TezrBottleMenuiPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F1520D74AB1008545D2 /* TezrBottleMenuiPadTests.swift */; };
 		E98F0F1D20D74C36008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
 		E98F0F1F20D74D28008545D2 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F1E20D74D28008545D2 /* CartTests.swift */; };
+		E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 /* Begin PBXFileReference section */
 		0FBCFAFB20D32D8100F3494E /* TezrBottleMenuiPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TezrBottleMenuiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FBCFB0020D32D8100F3494E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FBCFB0320D32D8100F3494E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FBCFB0520D32D8300F3494E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FBCFB0820D32D8300F3494E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		E98F0F1520D74AB1008545D2 /* TezrBottleMenuiPadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezrBottleMenuiPadTests.swift; sourceTree = "<group>"; };
 		E98F0F1720D74AB1008545D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E98F0F1E20D74D28008545D2 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
+		E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		E98F0F0720D737B2008545D2 /* Cart Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0FBCFB0020D32D8100F3494E /* ViewController.swift */,
+				E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */,
 			);
 			name = "Cart Menu";
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */,
-				0FBCFB0120D32D8100F3494E /* ViewController.swift in Sources */,
+				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
 			);
