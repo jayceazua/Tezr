@@ -18,7 +18,7 @@ struct Cart {
      */
     private(set) var lineItems: [SKU: LineItem]
     
-    func increment(item: Item) {
+    mutating func increment(item: Item) {
         
         // else +1 to to count
         if let itemInCart = lineItems[item.sku] {
@@ -26,11 +26,12 @@ struct Cart {
             
         // add item if not in cart, count = 1
         } else {
-            lineItems[item.sku] = newItemInCart
+            let newItemLineItem = LineItem(item: item)
+            lineItems[item.sku] = newItemLineItem
         }
     }
     
-    func decrement(item: Item) {
+    mutating func decrement(item: Item) {
         guard let lineItemForItem = lineItems[item.sku] else {
             return debugPrint("item is not in cart")
         }
@@ -49,4 +50,9 @@ struct Cart {
 class LineItem {
     let item: Item
     var count: Int
+    
+    init(item: Item) {
+        self.item = item
+        self.count = 1
+    }
 }
