@@ -48,7 +48,10 @@ struct SectionItem: Decodable {
     let items: [Item]
 }
 
+typealias SKU = String
+
 struct Item: Decodable {
     let title: String
     let price: Double
+    let sku: SKU
 }
