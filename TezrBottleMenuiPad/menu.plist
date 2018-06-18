@@ -168,7 +168,46 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Brand Dos</string>
+				<string>Brand 2</string>
+				<key>items</key>
+				<array>
+					<dict>
+						<key>sku</key>
+						<string>987654321</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>125231534</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>325125532</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>531532523</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Brand 3</string>
 				<key>items</key>
 				<array>
 					<dict>
@@ -212,6 +251,45 @@
 		<string>Rum</string>
 		<key>sectionItems</key>
 		<array>
+			<dict>
+				<key>title</key>
+				<string>Brand Uno</string>
+				<key>items</key>
+				<array>
+					<dict>
+						<key>sku</key>
+						<string>987654321</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>125231534</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>325125532</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>531532523</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+				</array>
+			</dict>
 			<dict>
 				<key>title</key>
 				<string>Brand Uno</string>
