@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>title</key>
+		<string>Rum</string>
 		<key>sectionItems</key>
 		<array>
 			<dict>
@@ -63,6 +65,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>title</key>
+		<string>Champagne</string>
 		<key>sectionItems</key>
 		<array>
 			<dict>

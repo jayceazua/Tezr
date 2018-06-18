@@ -21,6 +21,8 @@
 		E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */; };
 		E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */; };
 		E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2920D80CC0008545D2 /* View+StackView.swift */; };
+		E98F0F2C20D81B8C008545D2 /* UniversalExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */; };
+		E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCollectionViewCell.swift; sourceTree = "<group>"; };
 		E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleCollectionViewCell.xib; sourceTree = "<group>"; };
 		E98F0F2920D80CC0008545D2 /* View+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+StackView.swift"; sourceTree = "<group>"; };
+		E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniversalExtentions.swift; path = "../../../../../My Projects/Swift Source Files/UniversalExtentions.swift"; sourceTree = "<group>"; };
+		E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UniversalExtensions+Date.swift"; path = "../../../../../My Projects/Swift Source Files/UniversalExtensions+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		E98F0F2820D80CB6008545D2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */,
+				E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */,
 				E98F0F2920D80CC0008545D2 /* View+StackView.swift */,
 			);
 			name = Extensions;
@@ -265,8 +271,10 @@
 				E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */,
 				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
 				E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */,
+				E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
+				E98F0F2C20D81B8C008545D2 /* UniversalExtentions.swift in Sources */,
 				E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

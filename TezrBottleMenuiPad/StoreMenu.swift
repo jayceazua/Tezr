@@ -47,6 +47,7 @@ struct StoreMenu {
 }
 
 struct ItemCategory: Decodable {
+    let title: String
     let sectionItems: [SectionItem]
 }
 

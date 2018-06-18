@@ -32,9 +32,23 @@ class StoreMenuViewController: UIViewController {
         let nCategories = self.menu.categories.count
         
         // create collection views for each category
-        for index in 0..<nCategories {
+        for (index, aCategory) in self.menu.categories.enumerated() {
+            
+            let vertStackView = UIStackView(
+                axis: .vertical,
+                distribution: .fill,
+                alignment: .fill
+            )
             
             //TODO: create category header label
+            let categoryLabel = UILabel(frame: CGRect.zero)
+            categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+            categoryLabel.text = aCategory.title
+            categoryLabel.textAlignment = .center
+            categoryLabel.textColor = .white
+            categoryLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+            vertStackView.addArrangedSubview(categoryLabel)
+            
             let collectionViewLayout = UICollectionViewFlowLayout()
             let horizontalPadding: CGFloat = 16
             collectionViewLayout.sectionInset = UIEdgeInsets(
@@ -64,9 +78,10 @@ class StoreMenuViewController: UIViewController {
             collectionView.tag = index
             
             collectionView.register(BottleCollectionViewCell.nib, forCellWithReuseIdentifier: "bottle cell")
+            vertStackView.addArrangedSubview(collectionView)
             
             //add to a stack view
-            horzStackView.addArrangedSubview(collectionView)
+            horzStackView.addArrangedSubview(vertStackView)
             
             self.collectionViews.append(collectionView)
         }
@@ -112,8 +127,6 @@ class StoreMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +134,15 @@ class StoreMenuViewController: UIViewController {
         
         reloadMenu()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //FIX: initLayout is invoked before the screen is laid out for the current device
+        DispatchQueue.once(token: "StoreMenuViewController.viewDidLayoutSubviews") { [unowned self] in
+            self.initLayout()
+        }
+    }
 }
 
 // MARK: UICollectionViewDataSource & Delegate
