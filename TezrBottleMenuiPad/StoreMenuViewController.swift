@@ -10,7 +10,11 @@ import UIKit
 
 class StoreMenuViewController: UIViewController {
     
+    //TODO: create model
+    
     private var menu = StoreMenu.localStore
+    
+    private var collectionViews = [UICollectionView]()
     
 //    private var horz
     
@@ -25,26 +29,62 @@ class StoreMenuViewController: UIViewController {
             alignment: .fill
         )
         
+        let nCategories = self.menu.categories.count
+        
         // create collection views for each category
-        let colors: [UIColor] = [.red, .blue, .green, .yellow]
-        for aColor in colors {
-            let colorView = UIView()
-            colorView.translatesAutoresizingMaskIntoConstraints = false
-            colorView.backgroundColor = aColor
+        for index in 0..<nCategories {
+            
+            //TODO: create category header label
+            let collectionViewLayout = UICollectionViewFlowLayout()
+            let horizontalPadding: CGFloat = 16
+            collectionViewLayout.sectionInset = UIEdgeInsets(
+                top: 20,
+                left: horizontalPadding,
+                bottom: 10,
+                right: horizontalPadding
+            )
+            
+            //cell width
+            let cellSize: CGSize
+            let menuWidth = self.scrollViewMenu.bounds.width
+            if UIScreen.main.traitCollection.horizontalSizeClass == .regular {
+                cellSize = CGSize(width: menuWidth / 2 - (horizontalPadding * 2), height: 58)
+            } else {
+                cellSize = CGSize(width: menuWidth - (horizontalPadding * 2), height: 58)
+            }
+            collectionViewLayout.itemSize = cellSize
+            
+            let collectionView = UICollectionView(
+                frame: CGRect.zero,
+                collectionViewLayout: collectionViewLayout
+            )
+            collectionView.translatesAutoresizingMaskIntoConstraints = false
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.tag = index
+            
+            collectionView.register(BottleCollectionViewCell.nib, forCellWithReuseIdentifier: "bottle cell")
             
             //add to a stack view
-            horzStackView.addArrangedSubview(colorView)
+            horzStackView.addArrangedSubview(collectionView)
+            
+            self.collectionViews.append(collectionView)
         }
         
         // layout stack view in scrollview to allow paging through the collection views
         self.scrollViewMenu.addSubview(horzStackView)
-        horzStackView.topAnchor.constraint(equalTo: scrollViewMenu.topAnchor)
-        horzStackView.leadingAnchor.constraint(equalTo: scrollViewMenu.leadingAnchor)
-        horzStackView.trailingAnchor.constraint(equalTo: scrollViewMenu.trailingAnchor)
-        horzStackView.bottomAnchor.constraint(equalTo: scrollViewMenu.bottomAnchor)
-        horzStackView.heightAnchor.constraint(equalTo: scrollViewMenu.heightAnchor)
-        horzStackView.widthAnchor.constraint(equalTo: scrollViewMenu.widthAnchor, multiplier: CGFloat(colors.count))
-        NSLayoutConstraint.activate(horzStackView.constraints)
+        horzStackView.topAnchor.constraint(equalTo: scrollViewMenu.topAnchor).isActive = true
+        horzStackView.leadingAnchor.constraint(equalTo: scrollViewMenu.leadingAnchor).isActive = true
+        horzStackView.trailingAnchor.constraint(equalTo: scrollViewMenu.trailingAnchor).isActive = true
+        horzStackView.bottomAnchor.constraint(equalTo: scrollViewMenu.bottomAnchor).isActive = true
+        horzStackView.heightAnchor.constraint(equalTo: scrollViewMenu.heightAnchor).isActive = true
+        horzStackView.widthAnchor.constraint(equalTo: scrollViewMenu.widthAnchor, multiplier: CGFloat(nCategories)).isActive = true
+    }
+    
+    private func reloadMenu() {
+        self.collectionViews.forEach { (aCollectionView) in
+            aCollectionView.reloadData()
+        }
     }
     
     /*
@@ -75,5 +115,40 @@ class StoreMenuViewController: UIViewController {
         
         initLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadMenu()
+    }
 
+}
+
+// MARK: UICollectionViewDataSource & Delegate
+
+extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        let category = self.menu.categories[collectionView.tag]
+        
+        return category.sectionItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let category = self.menu.categories[collectionView.tag]
+        let section = category.sectionItems[section]
+        
+        return section.items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottle cell", for: indexPath) as? BottleCollectionViewCell else {
+            fatalError("bottle cell not registered, or not a BottleCollectionViewCell")
+        }
+        
+//        let item = self.menu.categories[collectionView.tag].sectionItems[indexPath.section].items[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }

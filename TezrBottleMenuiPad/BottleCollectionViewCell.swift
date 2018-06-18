@@ -21,7 +21,7 @@ protocol Bottle {
 class BottleCollectionViewCell: UICollectionViewCell {
     
     static var nib: UINib {
-        return UINib(nibName: String(describing: type(of: self)), bundle: nil)
+        return UINib(nibName: String(describing: self), bundle: nil)
     }
     
     weak var delegate: BottleCollectionViewCellDelegate?

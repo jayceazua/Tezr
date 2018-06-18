@@ -18,6 +18,106 @@
 						<key>price</key>
 						<integer>3000</integer>
 					</dict>
+					<dict>
+						<key>sku</key>
+						<string>124516234</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>123567543</string>
+						<key>title</key>
+						<string>Drink 2</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>346236321</string>
+						<key>title</key>
+						<string>Drink 3</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>234123512</string>
+						<key>title</key>
+						<string>Drink 4</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>123564576</string>
+						<key>title</key>
+						<string>Drink 5</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionItems</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Champagne</string>
+				<key>items</key>
+				<array>
+					<dict>
+						<key>sku</key>
+						<string>987654321</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>124516234</string>
+						<key>title</key>
+						<string>Drink 1</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>123567543</string>
+						<key>title</key>
+						<string>Drink 2</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>346236321</string>
+						<key>title</key>
+						<string>Drink 3</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>234123512</string>
+						<key>title</key>
+						<string>Drink 4</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>123564576</string>
+						<key>title</key>
+						<string>Drink 5</string>
+						<key>price</key>
+						<integer>3000</integer>
+					</dict>
 				</array>
 			</dict>
 		</array>
