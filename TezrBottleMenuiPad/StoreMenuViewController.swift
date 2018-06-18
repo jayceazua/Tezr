@@ -12,6 +12,8 @@ class StoreMenuViewController: UIViewController {
     
     //TODO: create model
     
+    private var currentCart = Cart()
+    
     private var menu = StoreMenu.localStore
     
     private var collectionViews = [UICollectionView]()
@@ -19,6 +21,10 @@ class StoreMenuViewController: UIViewController {
 //    private var horz
     
     // MARK: - RETURN VALUES
+    
+    private func itemAt(_ indexPath: IndexPath, forCollectionView tag: Int) -> Item {
+        return self.menu.categories[tag].sectionItems[indexPath.section].items[indexPath.row]
+    }
     
     // MARK: - VOID METHODS
     
@@ -166,9 +172,11 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
             fatalError("bottle cell not registered, or not a BottleCollectionViewCell")
         }
         
-        let item = self.menu.categories[collectionView.tag].sectionItems[indexPath.section].items[indexPath.row]
+        let item = itemAt(indexPath, forCollectionView: collectionView.tag)
         cell.configure(bottle: item)
+        cell.count = currentCart.count(for: item)
         cell.delegate = self
+        cell.tag = collectionView.tag
         
         return cell
     }
@@ -176,7 +184,12 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
 
 extension StoreMenuViewController: BottleCollectionViewCellDelegate {
     func bottleCollectionViewCell(_ bottleCell: BottleCollectionViewCell, didChangeStepperTo newValue: Int) {
+        guard let indexPath = self.collectionViews[bottleCell.tag].indexPath(for: bottleCell) else {
+            fatalError("index path not found for cell")
+        }
         
+        let item = itemAt(indexPath, forCollectionView: bottleCell.tag)
+        currentCart.setCount(for: item, to: newValue)
     }
 }
 
