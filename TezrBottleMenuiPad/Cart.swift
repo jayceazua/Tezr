@@ -16,7 +16,28 @@ struct Cart {
      
      Items in the cart have counts of either 1 or greater.
      */
-    private(set) var lineItems: [SKU: LineItem]
+    private(set) var lineItems: [SKU: LineItem] = [:]
+    
+    /**
+     - returns: all items in the cart
+     */
+    var items: [Item] {
+        return self.lineItems.map({ (_, aLineItem) -> Item in
+            return aLineItem.item
+        })
+    }
+    
+    /**
+     - returns: the count for the given item if it's in the cart. Otherwise, return
+     0
+     */
+    func count(for item: Item) -> Int {
+        if let foundItemInCart = self.lineItems[item.sku] {
+            return foundItemInCart.count
+        } else {
+            return 0
+        }
+    }
     
     mutating func increment(item: Item) {
         
@@ -49,10 +70,9 @@ struct Cart {
 
 class LineItem {
     let item: Item
-    var count: Int
+    var count: Int = 1
     
     init(item: Item) {
         self.item = item
-        self.count = 1
     }
 }

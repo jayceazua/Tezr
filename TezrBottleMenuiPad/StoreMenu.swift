@@ -35,7 +35,14 @@ struct StoreMenu {
     let categories: [ItemCategory]
     
     var items: [Item] {
-        fatalError("\(#function) not implemented")
+        var items = [Item]()
+        for aCategory in self.categories {
+            for aSection in aCategory.sectionItems {
+                items += aSection.items
+            }
+        }
+        
+        return items
     }
 }
 

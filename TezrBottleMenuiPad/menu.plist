@@ -11,6 +11,8 @@
 				<key>items</key>
 				<array>
 					<dict>
+						<key>sku</key>
+						<string>987654321</string>
 						<key>title</key>
 						<string>Drink 1</string>
 						<key>price</key>
