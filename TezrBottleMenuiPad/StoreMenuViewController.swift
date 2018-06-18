@@ -166,10 +166,28 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
             fatalError("bottle cell not registered, or not a BottleCollectionViewCell")
         }
         
-//        let item = self.menu.categories[collectionView.tag].sectionItems[indexPath.section].items[indexPath.row]
+        let item = self.menu.categories[collectionView.tag].sectionItems[indexPath.section].items[indexPath.row]
+        cell.configure(bottle: item)
+        cell.delegate = self
         
         return cell
     }
-    
-    
+}
+
+extension StoreMenuViewController: BottleCollectionViewCellDelegate {
+    func bottleCollectionViewCell(_ bottleCell: BottleCollectionViewCell, didChangeStepperTo newValue: Int) {
+        
+    }
+}
+
+extension Item: Bottle {
+    var thumbnail: UIImage {
+        if let imageFromName = UIImage(named: self.title) {
+            return imageFromName
+        } else {
+            debugPrint("thumbnail not found for ->\(self.title)<-")
+            
+            return UIImage(named: "thumbnail-not-found")!
+        }
+    }
 }
