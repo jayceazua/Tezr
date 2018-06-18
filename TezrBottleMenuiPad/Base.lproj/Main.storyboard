@@ -119,13 +119,13 @@
                                             <constraint firstItem="VgB-PM-thg" firstAttribute="top" secondItem="nuh-PQ-h3P" secondAttribute="top" constant="8" id="m7s-Cl-pTZ"/>
                                         </constraints>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gx-Nx-NtB">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gx-Nx-NtB">
                                         <rect key="frame" x="0.0" y="349" width="768" height="675"/>
                                     </scrollView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="NO3-oX-jDX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0eW-OC-W83"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NO3-oX-jDX" secondAttribute="trailing" id="QAg-7K-9gF"/>
