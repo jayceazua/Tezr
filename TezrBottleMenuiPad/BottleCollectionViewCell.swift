@@ -26,7 +26,7 @@ class BottleCollectionViewCell: UICollectionViewCell {
     
     weak var delegate: BottleCollectionViewCellDelegate?
     
-    var count: Int {
+    var quantity: Int {
         set {
             stepper.value = Double(newValue)
             labelQuantity.text = String(newValue)
@@ -56,9 +56,9 @@ class BottleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var stepper: UIStepper!
     @IBAction func changedStepperValue(_ sender: Any) {
-        delegate?.bottleCollectionViewCell(self, didChangeStepperTo: self.count)
+        delegate?.bottleCollectionViewCell(self, didChangeStepperTo: self.quantity)
         
-        labelQuantity.text = String(self.count)
+        labelQuantity.text = String(self.quantity)
     }
     
     @IBOutlet weak var labelQuantity: UILabel!

@@ -39,7 +39,7 @@ class CartTests: XCTestCase {
             return aLineItem.item.sku == addedItem.sku
         }), "Cart.lineItems does not contain the added item")
         
-        //checking its count and the line item count
+        //checking its quantity and the line item quantity
         XCTAssertEqual(cart.items.count, 1)
         XCTAssertEqual(cart.count(for: addedItem), 1)
         
@@ -62,7 +62,7 @@ class CartTests: XCTestCase {
             return aLineItem.item.sku == item.sku
         }), "Cart.lineItems should not contain the item")
         
-        //checking its count and the line item count
+        //checking its quantity and the line item quantity
         XCTAssertEqual(cart.items.count, 0)
         XCTAssertEqual(cart.count(for: item), 0)
         

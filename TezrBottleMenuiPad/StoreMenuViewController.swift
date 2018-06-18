@@ -174,7 +174,7 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
         
         let item = itemAt(indexPath, forCollectionView: collectionView.tag)
         cell.configure(bottle: item)
-        cell.count = currentCart.count(for: item)
+        cell.quantity = currentCart.quantity(for: item)
         cell.delegate = self
         cell.tag = collectionView.tag
         
@@ -189,7 +189,7 @@ extension StoreMenuViewController: BottleCollectionViewCellDelegate {
         }
         
         let item = itemAt(indexPath, forCollectionView: bottleCell.tag)
-        currentCart.setCount(for: item, to: newValue)
+        currentCart.setQuantity(for: item, to: newValue)
     }
 }
 

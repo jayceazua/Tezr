@@ -28,12 +28,12 @@ struct Cart {
     }
     
     /**
-     - returns: the count for the given item if it's in the cart. Otherwise, return
+     - returns: the quantity for the given item if it's in the cart. Otherwise, return
      0
      */
-    func count(for item: Item) -> Int {
+    func quantity(for item: Item) -> Int {
         if let foundItemInCart = self.lineItems[item.sku] {
-            return foundItemInCart.count
+            return foundItemInCart.quantity
         } else {
             return 0
         }
@@ -45,28 +45,28 @@ struct Cart {
      - postcondition: if the new quantity is zero, remove the item from the cart.
      if the item is not currently in the cart, add it and set its quanatity
      */
-    mutating func setCount(for item: Item, to newCount: Int) {
+    mutating func setQuantity(for item: Item, to newQuantity: Int) {
         if let foundItemInCart = self.lineItems[item.sku] {
-            if newCount != 0 {
-                foundItemInCart.count = newCount
+            if newQuantity != 0 {
+                foundItemInCart.quantity = newQuantity
             } else {
                 self.lineItems.removeValue(forKey: item.sku)
             }
         } else {
-            guard newCount != 0 else { return }
+            guard newQuantity != 0 else { return }
             
-            let newItemLineItem = LineItem(item: item, count: newCount)
+            let newItemLineItem = LineItem(item: item, quantity: newQuantity)
             lineItems[item.sku] = newItemLineItem
         }
     }
     
     mutating func increment(item: Item) {
         
-        // else +1 to to count
+        // else +1 to to quantity
         if let itemInCart = lineItems[item.sku] {
-            itemInCart.count += 1
+            itemInCart.quantity += 1
             
-        // add item if not in cart, count = 1
+        // add item if not in cart, quantity = 1
         } else {
             let newItemLineItem = LineItem(item: item)
             lineItems[item.sku] = newItemLineItem
@@ -79,22 +79,22 @@ struct Cart {
         }
         
         // remove item if zero
-        if lineItemForItem.count == 1 {
+        if lineItemForItem.quantity == 1 {
             lineItems.removeValue(forKey: item.sku)
             
-        // -1 to count
+        // -1 to quantity
         } else {
-            lineItemForItem.count -= 1
+            lineItemForItem.quantity -= 1
         }
     }
 }
 
 class LineItem {
     let item: Item
-    var count: Int
+    var quantity: Int
     
-    init(item: Item, count: Int = 1) {
+    init(item: Item, quantity: Int = 1) {
         self.item = item
-        self.count = count
+        self.quantity = quantity
     }
 }
