@@ -41,12 +41,12 @@ class CartTests: XCTestCase {
         
         //checking its quantity and the line item quantity
         XCTAssertEqual(cart.items.count, 1)
-        XCTAssertEqual(cart.count(for: addedItem), 1)
+        XCTAssertEqual(cart.quantity(for: addedItem), 1)
         
         //increment the same item again
         cart.increment(item: addedItem)
         XCTAssertEqual(cart.items.count, 1)
-        XCTAssertEqual(cart.count(for: addedItem), 2)
+        XCTAssertEqual(cart.quantity(for: addedItem), 2)
     }
     
     func testRemoveItemToCart() {
@@ -64,16 +64,38 @@ class CartTests: XCTestCase {
         
         //checking its quantity and the line item quantity
         XCTAssertEqual(cart.items.count, 0)
-        XCTAssertEqual(cart.count(for: item), 0)
+        XCTAssertEqual(cart.quantity(for: item), 0)
         
         //increment then decrement the same item again
         cart.increment(item: item)
         XCTAssertEqual(cart.items.count, 1)
-        XCTAssertEqual(cart.count(for: item), 1)
+        XCTAssertEqual(cart.quantity(for: item), 1)
         
         cart.decrement(item: item)
         XCTAssertEqual(cart.items.count, 0)
-        XCTAssertEqual(cart.count(for: item), 0)
+        XCTAssertEqual(cart.quantity(for: item), 0)
     }
     
+    func testSettingItemQuantities() {
+        var cart = Cart()
+        let store = StoreMenu.localStore
+        let item = store.items[0]
+        
+        //set quantity of item not in cart
+        cart.setQuantity(for: item, to: 5)
+        XCTAssertEqual(cart.quantity(for: item), 5)
+        
+        //update quantity of item already in cart
+        cart.setQuantity(for: item, to: 2)
+        XCTAssertEqual(cart.quantity(for: item), 2)
+        
+        //remove item by setting quantity to zero
+        cart.setQuantity(for: item, to: 0)
+        XCTAssertEqual(cart.quantity(for: item), 0)
+        XCTAssertEqual(cart.lineItems.count, 0)
+        
+        //ignore removing an item not in cart for new quantities of zero
+        cart.setQuantity(for: item, to: 0)
+        XCTAssertEqual(cart.lineItems.count, 0)
+    }
 }
