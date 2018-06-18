@@ -108,6 +108,16 @@ class StoreMenuViewController: UIViewController {
         }
     }
     
+    private func updateTotalLabels() {
+        labelTotal.text = currentCart.total.stringValue
+        if currentCart.remainingAmount > 0.0 {
+            labelRemaining.text = currentCart.remainingAmount.stringValue
+        } else {
+            labelRemaining.text = Currency(0.0).stringValue
+        }
+        labelMinimum.text = currentCart.minimumSubtotal.stringValue
+    }
+    
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      if let identifier = segue.identifier {
@@ -139,6 +149,8 @@ class StoreMenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         reloadMenu()
+        
+        updateTotalLabels()
     }
     
     override func viewDidLayoutSubviews() {
@@ -190,10 +202,13 @@ extension StoreMenuViewController: BottleCollectionViewCellDelegate {
         
         let item = itemAt(indexPath, forCollectionView: bottleCell.tag)
         currentCart.setQuantity(for: item, to: newValue)
+        
+        updateTotalLabels()
     }
 }
 
 extension Item: Bottle {
+    
     var thumbnail: UIImage {
         if let imageFromName = UIImage(named: self.title) {
             return imageFromName

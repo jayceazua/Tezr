@@ -11,12 +11,15 @@ import Foundation
 
 struct Cart {
     
-    /**
-     Items on the cart
-     
-     Items in the cart have counts of either 1 or greater.
-     */
-    private(set) var lineItems: [SKU: LineItem] = [:]
+    var minimumSubtotal: Currency = 10_000.00
+    
+    var total: Currency {
+        return self.lineItems.reduce(0.0) { $0 + $1.value.subtotal }
+    }
+    
+    var remainingAmount: Currency {
+        return minimumSubtotal - total
+    }
     
     /**
      - returns: all items in the cart
@@ -26,6 +29,15 @@ struct Cart {
             return aLineItem.item
         })
     }
+    
+    /**
+     Items on the cart
+     
+     Items in the cart have counts of either 1 or greater.
+     */
+    private(set) var lineItems: [SKU: LineItem] = [:]
+    
+    // MARK: - RETURN VALUES
     
     /**
      - returns: the quantity for the given item if it's in the cart. Otherwise, return
@@ -38,6 +50,8 @@ struct Cart {
             return 0
         }
     }
+    
+    // MARK: - VOID METHODS
     
     /**
      update the quantity for the given item
@@ -66,7 +80,7 @@ struct Cart {
         if let itemInCart = lineItems[item.sku] {
             itemInCart.quantity += 1
             
-        // add item if not in cart, quantity = 1
+            // add item if not in cart, quantity = 1
         } else {
             let newItemLineItem = LineItem(item: item)
             lineItems[item.sku] = newItemLineItem
@@ -92,6 +106,10 @@ struct Cart {
 class LineItem {
     let item: Item
     var quantity: Int
+    
+    var subtotal: Currency {
+        return item.price * Double(quantity) 
+    }
     
     init(item: Item, quantity: Int = 1) {
         self.item = item

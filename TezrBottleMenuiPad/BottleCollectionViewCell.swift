@@ -14,7 +14,7 @@ protocol BottleCollectionViewCellDelegate: class {
 
 protocol Bottle {
     var title: String { get }
-    var price: Double { get }
+    var price: Currency { get }
     var thumbnail: UIImage { get }
 }
 
@@ -44,8 +44,7 @@ class BottleCollectionViewCell: UICollectionViewCell {
         imageThumbnail.image = bottle.thumbnail
         labelTitle.text = bottle.title
         
-        //TODO: format currency
-//        labelPrice.text = Dollar(double: bottle.price)
+        labelPrice.text = bottle.price.stringValue
     }
     
     // MARK: - IBACTIONS

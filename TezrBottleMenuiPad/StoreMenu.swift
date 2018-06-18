@@ -60,6 +60,23 @@ typealias SKU = String
 
 struct Item: Decodable {
     let title: String
-    let price: Double
+    let price: Currency
     let sku: SKU
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case price
+        case sku
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Item.CodingKeys.self)
+        let title: String = try container.decode(String.self, forKey: .title)
+        let sku: SKU = try container.decode(SKU.self, forKey: .sku)
+        let priceValue: Double = try container.decode(Double.self, forKey: .price)
+        
+        self.title = title
+        self.sku = sku
+        self.price = Currency(priceValue)
+    }
 }

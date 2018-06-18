@@ -23,6 +23,7 @@
 		E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2920D80CC0008545D2 /* View+StackView.swift */; };
 		E98F0F2C20D81B8C008545D2 /* UniversalExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */; };
 		E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */; };
+		E98F0F3020D846FA008545D2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2F20D846FA008545D2 /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E98F0F2920D80CC0008545D2 /* View+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+StackView.swift"; sourceTree = "<group>"; };
 		E98F0F2B20D81B8C008545D2 /* UniversalExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniversalExtentions.swift; path = "../../../../../My Projects/Swift Source Files/UniversalExtentions.swift"; sourceTree = "<group>"; };
 		E98F0F2D20D81BFD008545D2 /* UniversalExtensions+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UniversalExtensions+Date.swift"; path = "../../../../../My Projects/Swift Source Files/UniversalExtensions+Date.swift"; sourceTree = "<group>"; };
+		E98F0F2F20D846FA008545D2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				E98F0F0B20D73913008545D2 /* StoreMenu.swift */,
 				E98F0F0D20D73C9F008545D2 /* menu.plist */,
 				E98F0F0920D737D6008545D2 /* Cart.swift */,
+				E98F0F2F20D846FA008545D2 /* Currency.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */,
+				E98F0F3020D846FA008545D2 /* Currency.swift in Sources */,
 				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
 				E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */,
 				E98F0F2E20D81BFD008545D2 /* UniversalExtensions+Date.swift in Sources */,
