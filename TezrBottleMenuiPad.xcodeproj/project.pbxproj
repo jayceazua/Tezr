@@ -18,6 +18,8 @@
 		E98F0F1D20D74C36008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
 		E98F0F1F20D74D28008545D2 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F1E20D74D28008545D2 /* CartTests.swift */; };
 		E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */; };
+		E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */; };
+		E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		E98F0F1720D74AB1008545D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E98F0F1E20D74D28008545D2 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuViewController.swift; sourceTree = "<group>"; };
+		E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCollectionViewCell.swift; sourceTree = "<group>"; };
+		E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		0FBCFAFD20D32D8100F3494E /* TezrBottleMenuiPad */ = {
 			isa = PBXGroup;
 			children = (
+				E98F0F2320D80746008545D2 /* UICustom */,
 				E98F0F0820D737C4008545D2 /* Models */,
 				0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */,
 				E98F0F0720D737B2008545D2 /* Cart Menu */,
@@ -131,6 +136,15 @@
 				E98F0F1720D74AB1008545D2 /* Info.plist */,
 			);
 			path = TezrBottleMenuiPadTests;
+			sourceTree = "<group>";
+		};
+		E98F0F2320D80746008545D2 /* UICustom */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */,
+				E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */,
+			);
+			name = UICustom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,7 @@
 				0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */,
 				E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */,
 				0FBCFB0620D32D8300F3494E /* Assets.xcassets in Resources */,
+				E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */,
 				0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +255,7 @@
 				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
+				E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
