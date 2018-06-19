@@ -63,16 +63,22 @@
                                                         <rect key="frame" x="495.5" y="19.5" width="240.5" height="57"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5St-IZ-b6p">
-                                                                <rect key="frame" x="125.5" y="0.0" width="115" height="25.5"/>
+                                                                <rect key="frame" x="95.5" y="0.0" width="145" height="25.5"/>
                                                                 <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-6d-IbC">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="25.5"/>
+                                                                        <connections>
+                                                                            <action selector="pressCart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lg3-Bo-tvi"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYu-5c-LZT">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="49" height="25.5"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="49" height="25.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                         <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-NJ-HFK">
-                                                                        <rect key="frame" x="57" y="0.0" width="58" height="25.5"/>
+                                                                        <rect key="frame" x="87" y="0.0" width="58" height="25.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                         <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -139,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonCart" destination="VW0-6d-IbC" id="aqO-na-mvD"/>
                         <outlet property="labelHeader" destination="Zkr-Qo-2dj" id="5Y3-1k-aei"/>
                         <outlet property="labelMinimum" destination="lsc-oF-XWD" id="4CR-Nk-NpZ"/>
                         <outlet property="labelRemaining" destination="k2K-5g-YLM" id="a2S-1y-bMm"/>

@@ -146,6 +146,12 @@ class StoreMenuViewController: UIViewController {
     // MARK: - IBACTIONS
     
     @IBOutlet weak var labelHeader: UILabel!
+    
+    @IBOutlet weak var buttonCart: UIButton!
+    @IBAction func pressCart(_ sender: UIButton) {
+        
+    }
+    
     @IBOutlet weak var labelTotal: UILabel!
     @IBOutlet weak var labelRemaining: UILabel!
     @IBOutlet weak var labelMinimum: UILabel!
