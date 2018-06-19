@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bottle cell" rowHeight="68" id="KGk-i7-Jjw" customClass="BottleTableViewCell" customModule="TezrBottleMenuiPad" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="67.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-rG-V0V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="67.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acebrut" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-8a-Iee">
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="67.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Il-8a-Iee" secondAttribute="height" id="kAg-De-UD0"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RA6-cd-pa5">
+                                <rect key="frame" x="76" y="14.5" width="244" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ace of Spade Brut Jeroboam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Pk-9e-36s">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0P-30-sII">
+                                        <rect key="frame" x="0.0" y="19.5" width="244" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.47390545690000002" green="0.47390545690000002" blue="0.47390545690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stepper hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BNf-p4-Azy">
+                                <rect key="frame" x="324" y="19.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changedStepperValue:" destination="KGk-i7-Jjw" eventType="valueChanged" id="cr8-VX-GzN"/>
+                                </connections>
+                            </stepper>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DlS-hd-1cU">
+                                <rect key="frame" x="324" y="22" width="33.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="DlS-hd-1cU" firstAttribute="width" secondItem="8Il-8a-Iee" secondAttribute="width" multiplier="1:2" id="n0J-aS-z0d"/>
+                            <constraint firstItem="8Il-8a-Iee" firstAttribute="height" secondItem="jEp-rG-V0V" secondAttribute="height" id="thu-D8-LmY"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jEp-rG-V0V" secondAttribute="trailing" id="1ki-Ih-OAa"/>
+                    <constraint firstAttribute="bottom" secondItem="jEp-rG-V0V" secondAttribute="bottom" id="PJB-8W-VBP"/>
+                    <constraint firstItem="jEp-rG-V0V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PaV-HX-YJR"/>
+                    <constraint firstItem="jEp-rG-V0V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aky-0z-I1c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageThumbnail" destination="8Il-8a-Iee" id="9D8-JV-bGC"/>
+                <outlet property="labelPrice" destination="a0P-30-sII" id="oAb-Ve-roc"/>
+                <outlet property="labelQuantity" destination="DlS-hd-1cU" id="YXz-Yz-QE6"/>
+                <outlet property="labelTitle" destination="4Pk-9e-36s" id="sDS-yT-QvH"/>
+                <outlet property="stepper" destination="BNf-p4-Azy" id="iBf-3q-szH"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="121.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="acebrut" width="112" height="112"/>
+    </resources>
+</document>

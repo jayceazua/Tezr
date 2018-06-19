@@ -149,7 +149,16 @@ class StoreMenuViewController: UIViewController {
     
     @IBOutlet weak var buttonCart: UIButton!
     @IBAction func pressCart(_ sender: UIButton) {
-        
+        let cartItemsVc = CartItemsTableTableViewController(items: self.currentCart.lineItems.map { $0.value })
+//        let nav = UINavigationController(rootViewController: cartItemsVc)
+        cartItemsVc.modalPresentationStyle = UIModalPresentationStyle.popover
+        if let popover = cartItemsVc.popoverPresentationController {
+            cartItemsVc.preferredContentSize = CGSize(width: 500, height: 600)
+//            popover.delegate = self
+            popover.sourceView = sender
+            
+            self.present(cartItemsVc, animated: true)
+        }
     }
     
     @IBOutlet weak var labelTotal: UILabel!
