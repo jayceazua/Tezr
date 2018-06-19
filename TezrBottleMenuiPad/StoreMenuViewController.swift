@@ -115,6 +115,9 @@ class StoreMenuViewController: UIViewController {
         horzStackView.bottomAnchor.constraint(equalTo: scrollViewMenu.bottomAnchor).isActive = true
         horzStackView.heightAnchor.constraint(equalTo: scrollViewMenu.heightAnchor).isActive = true
         horzStackView.widthAnchor.constraint(equalTo: scrollViewMenu.widthAnchor, multiplier: CGFloat(nCategories)).isActive = true
+        
+        // update page indicator
+        pageIndicator.numberOfPages = nCategories
     }
     
     private func reloadMenu() {
@@ -133,17 +136,12 @@ class StoreMenuViewController: UIViewController {
         labelMinimum.text = currentCart.minimumSubtotal.stringValue
     }
     
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if let identifier = segue.identifier {
-     switch identifier {
-     case <#pattern#>:
-     <#code#>
-     default:
-     break
-     }
-     }
-     }*/
+    private func updatePageIndicator() {
+        let pageWidth = scrollViewMenu.bounds.width
+        let contentOffset = scrollViewMenu.contentOffset.x
+        
+        pageIndicator.currentPage = Int(contentOffset / pageWidth)
+    }
     
     // MARK: - IBACTIONS
     
@@ -153,6 +151,7 @@ class StoreMenuViewController: UIViewController {
     @IBOutlet weak var labelMinimum: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var scrollViewMenu: UIScrollView!
+    @IBOutlet weak var pageIndicator: UIPageControl!
     
     // MARK: - LIFE CYCLE
     
@@ -227,6 +226,8 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
+// MARK: BottleCollectionViewCellDelegate
+
 extension StoreMenuViewController: BottleCollectionViewCellDelegate {
     func bottleCollectionViewCell(_ bottleCell: BottleCollectionViewCell, didChangeStepperTo newValue: Int) {
         guard let indexPath = self.collectionViews[bottleCell.tag].indexPath(for: bottleCell) else {
@@ -239,6 +240,16 @@ extension StoreMenuViewController: BottleCollectionViewCellDelegate {
         updateTotalLabels()
     }
 }
+
+// MARK: - ScrollViewDelegate
+
+extension StoreMenuViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        updatePageIndicator()
+    }
+}
+
+// MARK: - Bottle
 
 extension Item: Bottle {
     

@@ -20,19 +20,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NO3-oX-jDX">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="969"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MENU-homechris-copy" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-xX-e2r">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="210"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-PQ-h3P">
-                                        <rect key="frame" x="0.0" y="210" width="768" height="139"/>
+                                        <rect key="frame" x="0.0" y="210" width="768" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-PM-thg">
-                                                <rect key="frame" x="16" y="8" width="736" height="113"/>
+                                                <rect key="frame" x="16" y="8" width="736" height="96"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WPH-ws-GXc">
-                                                        <rect key="frame" x="0.0" y="8.5" width="358.5" height="96"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="358.5" height="96"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Rob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-Qo-2dj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358.5" height="70.5"/>
@@ -60,7 +60,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="8Iy-lE-SdF">
-                                                        <rect key="frame" x="495.5" y="0.0" width="240.5" height="113"/>
+                                                        <rect key="frame" x="495.5" y="19.5" width="240.5" height="57"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5St-IZ-b6p">
                                                                 <rect key="frame" x="125.5" y="0.0" width="115" height="25.5"/>
@@ -102,10 +102,6 @@
                                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Serach for.." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-ft-Hz0">
-                                                                <rect key="frame" x="0.5" y="57" width="240" height="56"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </searchBar>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -120,16 +116,24 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gx-Nx-NtB">
-                                        <rect key="frame" x="0.0" y="349" width="768" height="675"/>
+                                        <rect key="frame" x="0.0" y="332" width="768" height="637"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Y7t-yR-63j"/>
+                                        </connections>
                                     </scrollView>
                                 </subviews>
                             </stackView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AOT-gK-QGG">
+                                <rect key="frame" x="365" y="987" width="39" height="17"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="NO3-oX-jDX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0eW-OC-W83"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AOT-gK-QGG" secondAttribute="bottom" constant="20" id="1A3-Fd-b6U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NO3-oX-jDX" secondAttribute="trailing" id="QAg-7K-9gF"/>
-                            <constraint firstAttribute="bottom" secondItem="NO3-oX-jDX" secondAttribute="bottom" id="euo-ZG-wEW"/>
+                            <constraint firstItem="AOT-gK-QGG" firstAttribute="top" secondItem="NO3-oX-jDX" secondAttribute="bottom" constant="18" id="euo-ZG-wEW"/>
+                            <constraint firstItem="AOT-gK-QGG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hR4-Lh-osq"/>
                             <constraint firstItem="NO3-oX-jDX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zF4-qP-vSF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -139,8 +143,8 @@
                         <outlet property="labelMinimum" destination="lsc-oF-XWD" id="4CR-Nk-NpZ"/>
                         <outlet property="labelRemaining" destination="k2K-5g-YLM" id="a2S-1y-bMm"/>
                         <outlet property="labelTotal" destination="HYU-NJ-HFK" id="7Mn-cX-YNl"/>
+                        <outlet property="pageIndicator" destination="AOT-gK-QGG" id="kie-Nv-gs1"/>
                         <outlet property="scrollViewMenu" destination="3gx-Nx-NtB" id="G07-Lj-NNN"/>
-                        <outlet property="searchBar" destination="MKv-ft-Hz0" id="RPz-Qd-g2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,7 +154,6 @@
         <!--Collection View Controller-->
         <scene sceneID="xh2-8M-EQC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hew-HL-j3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="dlV-fZ-Hq2" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fEu-Ut-Sgf">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -182,6 +185,7 @@
                         </connections>
                     </collectionView>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hew-HL-j3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984" y="87"/>
         </scene>
