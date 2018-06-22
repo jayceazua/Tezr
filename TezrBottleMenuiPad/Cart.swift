@@ -105,6 +105,17 @@ struct Cart {
             lineItems[item.sku]!.quantity -= 1
         }
     }
+
+    /**
+     removes all values that have quantities equal to zero
+     */
+    mutating func purgeLineItems() {
+        for element in self.lineItems {
+            if element.value.quantity == 0 {
+                self.lineItems[element.key] = nil
+            }
+        }
+    }
 }
 
 struct LineItem {

@@ -48,6 +48,10 @@ class CartItemsTableTableViewController: UITableViewController {
     
     // MARK: - RETURN VALUES
     
+    private func itemAt(_ indexPath: IndexPath) -> Item {
+        return self.listOfLineItems[indexPath.row].item
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,6 +62,10 @@ class CartItemsTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 68
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Remove"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +91,16 @@ class CartItemsTableTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let item = itemAt(indexPath)
+            cart.setQuantity(for: item, to: 0)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default: break
+        }
+    }
+    
     // MARK: - IBACTIONS
     
     // MARK: - LIFE CYCLE
@@ -100,7 +118,7 @@ extension CartItemsTableTableViewController: BottleTableViewCellDelegate {
             fatalError("index path not found for cell")
         }
         
-        let item = self.listOfLineItems[indexPath.row].item
+        let item = itemAt(indexPath)
         self.cart.setQuantity(for: item, to: newValue, withoutPurging: true)
         
         updateTotalLabels()
