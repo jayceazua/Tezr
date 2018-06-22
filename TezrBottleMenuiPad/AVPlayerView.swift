@@ -9,27 +9,21 @@
 import UIKit
 import AVFoundation
 
+@IBDesignable
 class AVPlayerView: UIView {
     
-    var resource: URL?
-    
-    var player : AVPlayer?
-    var avPlayerLayer : AVPlayerLayer?
-    
-    init(frame: CGRect, with resource: URL) {
-        player = AVPlayer(url: resource)
-        avPlayerLayer = AVPlayerLayer(player: player)
-        
-        super.init(frame: frame)
-        
-        initLayout()
+    @IBInspectable
+    var resource: String? {
+        didSet {
+            reloadPlayer()
+        }
     }
     
-    init(frame: CGRect, fromBundle filename: String) {
-        if let path = Bundle.main.path(forResource: filename, ofType: "mp4") {
-            player = AVPlayer(url: URL(fileURLWithPath: path))
-            avPlayerLayer = AVPlayerLayer(player: player)
-        }
+    private var player : AVPlayer?
+    private var avPlayerLayer : AVPlayerLayer?
+    
+    init(frame: CGRect, with resource: String) {
+        self.resource = resource
         
         super.init(frame: frame)
         
@@ -37,27 +31,47 @@ class AVPlayerView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        if let path = Bundle.main.path(forResource: "header-movie-1", ofType: "mp4") {
-            player = AVPlayer(url: URL(fileURLWithPath: path))
-            avPlayerLayer = AVPlayerLayer(player: player)
-        }
-        
         super.init(coder: aDecoder)
         
         initLayout()
     }
     
+    func play() {
+        player?.seek(to: kCMTimeZero)
+        player?.play()
+    }
+    
+    func loop() {
+        guard let player = self.player else {
+            return
+        }
+        
+        player.seek(to: kCMTimeZero)
+        player.play()
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
+            player.seek(to: kCMTimeZero)
+            player.play()
+        }
+    }
+    
     private func initLayout() {
         guard
-            let player = self.player,
-            let avPlayerLayer = self.avPlayerLayer else {
+            let resource = self.resource,
+            let path = Bundle.main.path(forResource: resource, ofType: "mp4") else {
                 return
         }
         
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resize
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        avPlayerLayer = AVPlayerLayer(player: player)
         
-        self.layer.addSublayer(avPlayerLayer)
-        player.play()
+        avPlayerLayer!.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        
+        self.layer.addSublayer(avPlayerLayer!)
+    }
+    
+    private func reloadPlayer() {
+        self.initLayout()
     }
     
     override func layoutSubviews() {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,13 +21,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NO3-oX-jDX">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="969"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="986"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MENU-homechris-copy" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-xX-e2r">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="210"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-Vt-oFb" customClass="AVPlayerView" customModule="TezrBottleMenuiPad" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="wsB-Vt-oFb" secondAttribute="width" multiplier="1:3" id="EwG-4Y-00H"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="resource" value="header-movie-1"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-PQ-h3P">
-                                        <rect key="frame" x="0.0" y="210" width="768" height="122"/>
+                                        <rect key="frame" x="0.0" y="256" width="768" height="122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-PM-thg">
                                                 <rect key="frame" x="16" y="8" width="736" height="96"/>
@@ -122,7 +129,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gx-Nx-NtB">
-                                        <rect key="frame" x="0.0" y="332" width="768" height="637"/>
+                                        <rect key="frame" x="0.0" y="378" width="768" height="608"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Y7t-yR-63j"/>
                                         </connections>
@@ -130,7 +137,7 @@
                                 </subviews>
                             </stackView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AOT-gK-QGG">
-                                <rect key="frame" x="365" y="987" width="39" height="17"/>
+                                <rect key="frame" x="365" y="1004" width="39" height="0.0"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -151,6 +158,7 @@
                         <outlet property="labelRemaining" destination="k2K-5g-YLM" id="a2S-1y-bMm"/>
                         <outlet property="labelTotal" destination="HYU-NJ-HFK" id="7Mn-cX-YNl"/>
                         <outlet property="pageIndicator" destination="AOT-gK-QGG" id="kie-Nv-gs1"/>
+                        <outlet property="playerHeaderMovie" destination="wsB-Vt-oFb" id="fSH-0A-gn5"/>
                         <outlet property="scrollViewMenu" destination="3gx-Nx-NtB" id="G07-Lj-NNN"/>
                     </connections>
                 </viewController>
@@ -197,7 +205,4 @@
             <point key="canvasLocation" x="984" y="87"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="MENU-homechris-copy" width="768" height="210"/>
-    </resources>
 </document>

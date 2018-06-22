@@ -145,6 +145,8 @@ class StoreMenuViewController: UIViewController {
     
     // MARK: - IBACTIONS
     
+    @IBOutlet weak var playerHeaderMovie: AVPlayerView!
+    
     @IBOutlet weak var labelHeader: UILabel!
     
     @IBOutlet weak var buttonCart: UIButton!
@@ -172,6 +174,8 @@ class StoreMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playerHeaderMovie.loop()
     }
     
     override func viewWillAppear(_ animated: Bool) {
