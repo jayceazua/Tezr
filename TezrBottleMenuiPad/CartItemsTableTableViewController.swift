@@ -118,11 +118,15 @@ class CartItemsTableTableViewController: UITableViewController {
     // MARK: - IBACTIONS
     
     @objc private func pressSubmit(_ button: UIBarButtonItem) {
-        
+        UIAlertController(title: "Thank You!", message: "Thank you for your order. Please return this menu to your Server.", preferredStyle: .alert)
+            .addDismissButton(title: "Okay")
+            .present(in: self)
     }
     
     @objc private func pressClearCart(_ button: UIBarButtonItem) {
-        
+        self.cart.clearItems()
+        self.updateTotalLabels()
+        self.tableView.reloadSections([0], with: .automatic)
     }
     
     // MARK: - LIFE CYCLE

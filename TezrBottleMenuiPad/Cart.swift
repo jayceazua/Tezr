@@ -106,6 +106,10 @@ struct Cart {
         }
     }
 
+    mutating func clearItems() {
+        self.lineItems.removeAll()
+    }
+    
     /**
      removes all values that have quantities equal to zero
      */
