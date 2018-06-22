@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bottle cell" id="DpT-KS-6ht" customClass="BottleCollectionViewCell" customModule="TezrBottleMenuiPad" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="58"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-Fc-e4z">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="58"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acebrut" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-H1-VlI">
+                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dSJ-H1-VlI" secondAttribute="height" id="q7G-mw-umv"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qe7-R9-9gC">
+                                <rect key="frame" x="66.5" y="9.5" width="209.5" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ace of Spade Brut Jeroboam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AwA-pe-Qgw">
+                                        <rect key="frame" x="0.0" y="0.0" width="209.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$12,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-3e-Ymi">
+                                        <rect key="frame" x="0.0" y="19.5" width="209.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.47390545690000002" green="0.47390545690000002" blue="0.47390545690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-Si-rAt">
+                                <rect key="frame" x="284" y="14.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changedStepperValue:" destination="DpT-KS-6ht" eventType="valueChanged" id="EKq-uJ-bOz"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hpA-2v-k1s">
+                                <rect key="frame" x="386" y="17" width="29" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hpA-2v-k1s" firstAttribute="width" secondItem="dSJ-H1-VlI" secondAttribute="width" multiplier="1:2" id="N6I-pK-JBp"/>
+                            <constraint firstItem="dSJ-H1-VlI" firstAttribute="height" secondItem="ZdZ-Fc-e4z" secondAttribute="height" id="SSD-jg-w67"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ZdZ-Fc-e4z" secondAttribute="trailing" id="12v-vb-ArB"/>
+                <constraint firstItem="ZdZ-Fc-e4z" firstAttribute="top" secondItem="DpT-KS-6ht" secondAttribute="top" id="I0F-36-7UE"/>
+                <constraint firstItem="ZdZ-Fc-e4z" firstAttribute="leading" secondItem="DpT-KS-6ht" secondAttribute="leading" id="Yhe-vV-rak"/>
+                <constraint firstAttribute="bottom" secondItem="ZdZ-Fc-e4z" secondAttribute="bottom" id="fH4-aV-vng"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="3q0-mP-XMO"/>
+            <size key="customSize" width="415" height="58"/>
+            <connections>
+                <outlet property="imageThumbnail" destination="dSJ-H1-VlI" id="CmH-ai-ScO"/>
+                <outlet property="labelPrice" destination="tmL-3e-Ymi" id="F4Z-of-Zdk"/>
+                <outlet property="labelQuantity" destination="hpA-2v-k1s" id="B2o-Qx-dVQ"/>
+                <outlet property="labelTitle" destination="AwA-pe-Qgw" id="Tx7-T0-xdC"/>
+                <outlet property="stepper" destination="g3m-Si-rAt" id="SfD-Cu-OKK"/>
+            </connections>
+            <point key="canvasLocation" x="47.5" y="-198"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="acebrut" width="112" height="112"/>
+    </resources>
+</document>

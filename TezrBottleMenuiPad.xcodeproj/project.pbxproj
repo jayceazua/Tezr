@@ -8,24 +8,76 @@
 
 /* Begin PBXBuildFile section */
 		0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */; };
-		0FBCFB0120D32D8100F3494E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0020D32D8100F3494E /* ViewController.swift */; };
 		0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0220D32D8100F3494E /* Main.storyboard */; };
 		0FBCFB0620D32D8300F3494E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0520D32D8300F3494E /* Assets.xcassets */; };
 		0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0720D32D8300F3494E /* LaunchScreen.storyboard */; };
+		E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */; };
+		E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */; };
+		E96D50EA20D8DDB90077A4F0 /* BottleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */; };
+		E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0920D737D6008545D2 /* Cart.swift */; };
+		E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0B20D73913008545D2 /* StoreMenu.swift */; };
+		E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
+		E98F0F1620D74AB1008545D2 /* TezrBottleMenuiPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F1520D74AB1008545D2 /* TezrBottleMenuiPadTests.swift */; };
+		E98F0F1D20D74C36008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
+		E98F0F1F20D74D28008545D2 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F1E20D74D28008545D2 /* CartTests.swift */; };
+		E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */; };
+		E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */; };
+		E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */; };
+		E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2920D80CC0008545D2 /* View+StackView.swift */; };
+		E98F0F3020D846FA008545D2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F2F20D846FA008545D2 /* Currency.swift */; };
+		E98F0F3320D855F8008545D2 /* MenuHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */; };
+		E98F0F3420D855F8008545D2 /* MenuHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */; };
+		E98F0F3720D873D1008545D2 /* UniversalExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F3520D873D1008545D2 /* UniversalExtentions.swift */; };
+		E98F0F3820D873D1008545D2 /* UniversalExtensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F3620D873D1008545D2 /* UniversalExtensions+Date.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E98F0F1820D74AB1008545D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FBCFAF320D32D8100F3494E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FBCFAFA20D32D8100F3494E;
+			remoteInfo = TezrBottleMenuiPad;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0FBCFAFB20D32D8100F3494E /* TezrBottleMenuiPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TezrBottleMenuiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FBCFB0020D32D8100F3494E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FBCFB0320D32D8100F3494E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FBCFB0520D32D8300F3494E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FBCFB0820D32D8300F3494E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FBCFB0A20D32D8300F3494E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsTableTableViewController.swift; sourceTree = "<group>"; };
+		E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleTableViewCell.swift; sourceTree = "<group>"; };
+		E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleTableViewCell.xib; sourceTree = "<group>"; };
+		E98F0F0920D737D6008545D2 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		E98F0F0B20D73913008545D2 /* StoreMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenu.swift; sourceTree = "<group>"; };
+		E98F0F0D20D73C9F008545D2 /* menu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = menu.plist; sourceTree = "<group>"; };
+		E98F0F1320D74AB1008545D2 /* TezrBottleMenuiPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TezrBottleMenuiPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98F0F1520D74AB1008545D2 /* TezrBottleMenuiPadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TezrBottleMenuiPadTests.swift; sourceTree = "<group>"; };
+		E98F0F1720D74AB1008545D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98F0F1E20D74D28008545D2 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
+		E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenuViewController.swift; sourceTree = "<group>"; };
+		E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCollectionViewCell.swift; sourceTree = "<group>"; };
+		E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleCollectionViewCell.xib; sourceTree = "<group>"; };
+		E98F0F2920D80CC0008545D2 /* View+StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+StackView.swift"; sourceTree = "<group>"; };
+		E98F0F2F20D846FA008545D2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		E98F0F3520D873D1008545D2 /* UniversalExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalExtentions.swift; sourceTree = "<group>"; };
+		E98F0F3620D873D1008545D2 /* UniversalExtensions+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UniversalExtensions+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0FBCFAF820D32D8100F3494E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E98F0F1020D74AB1008545D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				0FBCFAFD20D32D8100F3494E /* TezrBottleMenuiPad */,
+				E98F0F1420D74AB1008545D2 /* TezrBottleMenuiPadTests */,
 				0FBCFAFC20D32D8100F3494E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0FBCFAFB20D32D8100F3494E /* TezrBottleMenuiPad.app */,
+				E98F0F1320D74AB1008545D2 /* TezrBottleMenuiPadTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +108,78 @@
 		0FBCFAFD20D32D8100F3494E /* TezrBottleMenuiPad */ = {
 			isa = PBXGroup;
 			children = (
+				E98F0F2820D80CB6008545D2 /* Extensions */,
+				E98F0F2320D80746008545D2 /* UICustom */,
+				E98F0F0820D737C4008545D2 /* Models */,
 				0FBCFAFE20D32D8100F3494E /* AppDelegate.swift */,
-				0FBCFB0020D32D8100F3494E /* ViewController.swift */,
+				E98F0F0720D737B2008545D2 /* Cart Menu */,
 				0FBCFB0220D32D8100F3494E /* Main.storyboard */,
+				E98F0F0620D7379B008545D2 /* Supporting Files */,
+			);
+			path = TezrBottleMenuiPad;
+			sourceTree = "<group>";
+		};
+		E98F0F0620D7379B008545D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				0FBCFB0520D32D8300F3494E /* Assets.xcassets */,
 				0FBCFB0720D32D8300F3494E /* LaunchScreen.storyboard */,
 				0FBCFB0A20D32D8300F3494E /* Info.plist */,
 			);
-			path = TezrBottleMenuiPad;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E98F0F0720D737B2008545D2 /* Cart Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */,
+				E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */,
+			);
+			name = "Cart Menu";
+			sourceTree = "<group>";
+		};
+		E98F0F0820D737C4008545D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F0B20D73913008545D2 /* StoreMenu.swift */,
+				E98F0F0D20D73C9F008545D2 /* menu.plist */,
+				E98F0F0920D737D6008545D2 /* Cart.swift */,
+				E98F0F2F20D846FA008545D2 /* Currency.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E98F0F1420D74AB1008545D2 /* TezrBottleMenuiPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F1520D74AB1008545D2 /* TezrBottleMenuiPadTests.swift */,
+				E98F0F1E20D74D28008545D2 /* CartTests.swift */,
+				E98F0F1720D74AB1008545D2 /* Info.plist */,
+			);
+			path = TezrBottleMenuiPadTests;
+			sourceTree = "<group>";
+		};
+		E98F0F2320D80746008545D2 /* UICustom */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F2420D80763008545D2 /* BottleCollectionViewCell.swift */,
+				E98F0F2620D80779008545D2 /* BottleCollectionViewCell.xib */,
+				E98F0F3120D855F8008545D2 /* MenuHeaderCollectionReusableView.swift */,
+				E98F0F3220D855F8008545D2 /* MenuHeaderCollectionReusableView.xib */,
+				E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */,
+				E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */,
+			);
+			name = UICustom;
+			sourceTree = "<group>";
+		};
+		E98F0F2820D80CB6008545D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E98F0F3620D873D1008545D2 /* UniversalExtensions+Date.swift */,
+				E98F0F3520D873D1008545D2 /* UniversalExtentions.swift */,
+				E98F0F2920D80CC0008545D2 /* View+StackView.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +202,24 @@
 			productReference = 0FBCFAFB20D32D8100F3494E /* TezrBottleMenuiPad.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E98F0F1220D74AB1008545D2 /* TezrBottleMenuiPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E98F0F1A20D74AB1008545D2 /* Build configuration list for PBXNativeTarget "TezrBottleMenuiPadTests" */;
+			buildPhases = (
+				E98F0F0F20D74AB1008545D2 /* Sources */,
+				E98F0F1020D74AB1008545D2 /* Frameworks */,
+				E98F0F1120D74AB1008545D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E98F0F1920D74AB1008545D2 /* PBXTargetDependency */,
+			);
+			name = TezrBottleMenuiPadTests;
+			productName = TezrBottleMenuiPadTests;
+			productReference = E98F0F1320D74AB1008545D2 /* TezrBottleMenuiPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +232,10 @@
 				TargetAttributes = {
 					0FBCFAFA20D32D8100F3494E = {
 						CreatedOnToolsVersion = 9.4;
+					};
+					E98F0F1220D74AB1008545D2 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 0FBCFAFA20D32D8100F3494E;
 					};
 				};
 			};
@@ -113,6 +253,7 @@
 			projectRoot = "";
 			targets = (
 				0FBCFAFA20D32D8100F3494E /* TezrBottleMenuiPad */,
+				E98F0F1220D74AB1008545D2 /* TezrBottleMenuiPadTests */,
 			);
 		};
 /* End PBXProject section */
@@ -123,8 +264,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */,
+				E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */,
+				E96D50EA20D8DDB90077A4F0 /* BottleTableViewCell.xib in Resources */,
 				0FBCFB0620D32D8300F3494E /* Assets.xcassets in Resources */,
+				E98F0F3420D855F8008545D2 /* MenuHeaderCollectionReusableView.xib in Resources */,
+				E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */,
 				0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E98F0F1120D74AB1008545D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98F0F1D20D74C36008545D2 /* menu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +288,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FBCFB0120D32D8100F3494E /* ViewController.swift in Sources */,
+				E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */,
+				E98F0F3020D846FA008545D2 /* Currency.swift in Sources */,
+				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
+				E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */,
+				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
+				E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */,
+				E98F0F3820D873D1008545D2 /* UniversalExtensions+Date.swift in Sources */,
+				E98F0F3720D873D1008545D2 /* UniversalExtentions.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
+				E98F0F3320D855F8008545D2 /* MenuHeaderCollectionReusableView.swift in Sources */,
+				E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */,
+				E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E98F0F0F20D74AB1008545D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98F0F1620D74AB1008545D2 /* TezrBottleMenuiPadTests.swift in Sources */,
+				E98F0F1F20D74D28008545D2 /* CartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E98F0F1920D74AB1008545D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FBCFAFA20D32D8100F3494E /* TezrBottleMenuiPad */;
+			targetProxy = E98F0F1820D74AB1008545D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0FBCFB0220D32D8100F3494E /* Main.storyboard */ = {
@@ -312,6 +492,46 @@
 			};
 			name = Release;
 		};
+		E98F0F1B20D74AB1008545D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U3L6K9JA6;
+				INFOPLIST_FILE = TezrBottleMenuiPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.linniergames.TezrBottleMenuiPadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TezrBottleMenuiPad.app/TezrBottleMenuiPad";
+			};
+			name = Debug;
+		};
+		E98F0F1C20D74AB1008545D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U3L6K9JA6;
+				INFOPLIST_FILE = TezrBottleMenuiPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.linniergames.TezrBottleMenuiPadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TezrBottleMenuiPad.app/TezrBottleMenuiPad";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +549,15 @@
 			buildConfigurations = (
 				0FBCFB0E20D32D8300F3494E /* Debug */,
 				0FBCFB0F20D32D8300F3494E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E98F0F1A20D74AB1008545D2 /* Build configuration list for PBXNativeTarget "TezrBottleMenuiPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E98F0F1B20D74AB1008545D2 /* Debug */,
+				E98F0F1C20D74AB1008545D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
