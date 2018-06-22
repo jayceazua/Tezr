@@ -16,10 +16,18 @@ class CartItemsTableTableViewController: UITableViewController {
 //        let storyboard = UIStoryboard(
 //    }
     
-    var items: [LineItem]
+    var cart: Cart! {
+        didSet {
+            self.listOfLineItems = cart.lineItems.map { $0.value }
+        }
+    }
     
-    init(items: [LineItem]) {
-        self.items = items
+    private var listOfLineItems = [LineItem]()
+    
+    init(cart: Cart) {
+        defer {
+            self.cart = cart
+        }
         
         super.init(style: .plain)
         
@@ -27,8 +35,6 @@ class CartItemsTableTableViewController: UITableViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.items = []
-        
         super.init(coder: aDecoder)
         
         self.initLayout()
@@ -41,7 +47,7 @@ class CartItemsTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return listOfLineItems.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,7 +58,7 @@ class CartItemsTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: BottleTableViewCell.identifier, for: indexPath) as! BottleTableViewCell
         
         // Configure the cell...
-        let lineItem = self.items[indexPath.row]
+        let lineItem = self.listOfLineItems[indexPath.row]
         cell.configure(lineItem: lineItem)
         
         return cell

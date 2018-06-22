@@ -60,9 +60,9 @@ struct Cart {
      if the item is not currently in the cart, add it and set its quanatity
      */
     mutating func setQuantity(for item: Item, to newQuantity: Int) {
-        if let foundItemInCart = self.lineItems[item.sku] {
+        if self.lineItems[item.sku] != nil {
             if newQuantity != 0 {
-                foundItemInCart.quantity = newQuantity
+                self.lineItems[item.sku]!.quantity = newQuantity
             } else {
                 self.lineItems.removeValue(forKey: item.sku)
             }
@@ -77,8 +77,8 @@ struct Cart {
     mutating func increment(item: Item) {
         
         // else +1 to to quantity
-        if let itemInCart = lineItems[item.sku] {
-            itemInCart.quantity += 1
+        if lineItems[item.sku] != nil {
+            lineItems[item.sku]!.quantity += 1
             
             // add item if not in cart, quantity = 1
         } else {
@@ -88,22 +88,22 @@ struct Cart {
     }
     
     mutating func decrement(item: Item) {
-        guard let lineItemForItem = lineItems[item.sku] else {
+        guard lineItems[item.sku] != nil else {
             return debugPrint("item is not in cart")
         }
         
         // remove item if zero
-        if lineItemForItem.quantity == 1 {
+        if lineItems[item.sku]!.quantity == 1 {
             lineItems.removeValue(forKey: item.sku)
             
         // -1 to quantity
         } else {
-            lineItemForItem.quantity -= 1
+            lineItems[item.sku]!.quantity -= 1
         }
     }
 }
 
-class LineItem {
+struct LineItem {
     let item: Item
     var quantity: Int
     

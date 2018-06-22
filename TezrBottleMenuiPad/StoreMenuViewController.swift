@@ -151,7 +151,7 @@ class StoreMenuViewController: UIViewController {
     
     @IBOutlet weak var buttonCart: UIButton!
     @IBAction func pressCart(_ sender: UIButton) {
-        let cartItemsVc = CartItemsTableTableViewController(items: self.currentCart.lineItems.map { $0.value })
+        let cartItemsVc = CartItemsTableTableViewController(cart: self.currentCart)
 //        let nav = UINavigationController(rootViewController: cartItemsVc)
         cartItemsVc.modalPresentationStyle = UIModalPresentationStyle.popover
         if let popover = cartItemsVc.popoverPresentationController {
