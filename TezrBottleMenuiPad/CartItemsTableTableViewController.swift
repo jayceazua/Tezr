@@ -48,6 +48,21 @@ class CartItemsTableTableViewController: UITableViewController {
     
     // MARK: - RETURN VALUES
     
+    static func instantiateViewController(delegate: CartItemsTableViewControllerDelegate, cart: Cart) -> UINavigationController {
+        let vc = CartItemsTableTableViewController(cart: cart)
+        vc.delegate = delegate
+        let nc = UINavigationController(rootViewController: vc)
+        
+        //add buttons
+        let submitButton = UIBarButtonItem(title: "Submit", style: .done, target: vc, action: #selector(pressSubmit(_:)))
+        let clearButton = UIBarButtonItem(title: "Clear Cart", style: .plain, target: vc, action: #selector(pressClearCart(_:)))
+        let flexiableDivider = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        vc.navigationController!.isToolbarHidden = false
+        vc.setToolbarItems([submitButton, flexiableDivider, clearButton], animated: false)
+        
+        return nc
+    }
+    
     private func itemAt(_ indexPath: IndexPath) -> Item {
         return self.listOfLineItems[indexPath.row].item
     }
@@ -84,11 +99,10 @@ class CartItemsTableTableViewController: UITableViewController {
     private func initLayout() {
         self.tableView.register(BottleTableViewCell.nib, forCellReuseIdentifier: BottleTableViewCell.identifier)
         self.view.backgroundColor = .black
-        self.tableView.backgroundColor = .black
-    }
+        self.tableView.backgroundColor = .black    }
     
     private func updateTotalLabels() {
-        
+        self.title = "Subtotal: \(cart.subtotal.stringValue)"
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -103,7 +117,21 @@ class CartItemsTableTableViewController: UITableViewController {
     
     // MARK: - IBACTIONS
     
+    @objc private func pressSubmit(_ button: UIBarButtonItem) {
+        
+    }
+    
+    @objc private func pressClearCart(_ button: UIBarButtonItem) {
+        
+    }
+    
     // MARK: - LIFE CYCLE
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateTotalLabels()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

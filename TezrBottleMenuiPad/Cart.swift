@@ -13,12 +13,12 @@ struct Cart {
     
     var minimumSubtotal: Currency = 10_000.00
     
-    var total: Currency {
+    var subtotal: Currency {
         return self.lineItems.reduce(0.0) { $0 + $1.value.subtotal }
     }
     
     var remainingAmount: Currency {
-        return minimumSubtotal - total
+        return minimumSubtotal - subtotal
     }
     
     /**

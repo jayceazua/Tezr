@@ -131,8 +131,11 @@ class StoreMenuViewController: UIViewController {
 //        fatalError("\(#function) not implemented")
 //    }
     
+    /**
+     update subtotal and remaning balance amounts
+     */
     private func updateTotalLabels() {
-        labelTotal.text = currentCart.total.stringValue
+        labelTotal.text = currentCart.subtotal.stringValue
         if currentCart.remainingAmount > 0.0 {
             labelRemaining.text = currentCart.remainingAmount.stringValue
         } else {
@@ -156,16 +159,14 @@ class StoreMenuViewController: UIViewController {
     
     @IBOutlet weak var buttonCart: UIButton!
     @IBAction func pressCart(_ sender: UIButton) {
-        let cartItemsVc = CartItemsTableTableViewController(cart: self.currentCart)
-        cartItemsVc.delegate = self
-//        let nav = UINavigationController(rootViewController: cartItemsVc)
-        cartItemsVc.modalPresentationStyle = UIModalPresentationStyle.popover
-        if let popover = cartItemsVc.popoverPresentationController {
-            cartItemsVc.preferredContentSize = CGSize(width: 500, height: 600)
+        let cartItemsNav = CartItemsTableTableViewController.instantiateViewController(delegate: self, cart: self.currentCart)
+        cartItemsNav.modalPresentationStyle = UIModalPresentationStyle.popover
+        if let popover = cartItemsNav.popoverPresentationController {
+            cartItemsNav.preferredContentSize = CGSize(width: 500, height: 600)
 //            popover.delegate = self
             popover.sourceView = sender
             
-            self.present(cartItemsVc, animated: true)
+            self.present(cartItemsNav, animated: true)
         }
     }
     
@@ -280,11 +281,13 @@ extension StoreMenuViewController: UIScrollViewDelegate {
     }
 }
 
-// MARK: - Bottle
+// MARK: - CartItemsTableViewControllerDelegate
 
 extension StoreMenuViewController: CartItemsTableViewControllerDelegate {
     func cartItems(_ cartItemsController: CartItemsTableTableViewController, didFinishWith cart: Cart) {
         self.currentCart = cart
+        self.currentCart.purgeLineItems()
+        updateTotalLabels()
         reloadMenu()
     }
 }
