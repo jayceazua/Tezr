@@ -178,6 +178,12 @@ class StoreMenuViewController: UIViewController {
         playerHeaderMovie.loop()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
