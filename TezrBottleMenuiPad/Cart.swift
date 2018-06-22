@@ -30,6 +30,8 @@ struct Cart {
         })
     }
     
+    //TODO: make private
+    
     /**
      Items on the cart
      
@@ -56,12 +58,14 @@ struct Cart {
     /**
      update the quantity for the given item
      
+     - parameter: withoutPurging: if true items will not be removed if quanitties equaling zero
+     
      - postcondition: if the new quantity is zero, remove the item from the cart.
-     if the item is not currently in the cart, add it and set its quanatity
+     if the item is not currently in the cart, add it and set its quanatity (if withoutPurging is false)
      */
-    mutating func setQuantity(for item: Item, to newQuantity: Int) {
+    mutating func setQuantity(for item: Item, to newQuantity: Int, withoutPurging: Bool = false) {
         if self.lineItems[item.sku] != nil {
-            if newQuantity != 0 {
+            if newQuantity != 0 || withoutPurging == true {
                 self.lineItems[item.sku]!.quantity = newQuantity
             } else {
                 self.lineItems.removeValue(forKey: item.sku)
@@ -80,7 +84,7 @@ struct Cart {
         if lineItems[item.sku] != nil {
             lineItems[item.sku]!.quantity += 1
             
-            // add item if not in cart, quantity = 1
+        // add item if not in cart, quantity = 1
         } else {
             let newItemLineItem = LineItem(item: item)
             lineItems[item.sku] = newItemLineItem

@@ -126,6 +126,11 @@ class StoreMenuViewController: UIViewController {
         }
     }
     
+    //TODO: more efficent method to reload quanitities in the menu
+//    private func reloadMenu(for lineItems: [LineItem]) {
+//        fatalError("\(#function) not implemented")
+//    }
+    
     private func updateTotalLabels() {
         labelTotal.text = currentCart.total.stringValue
         if currentCart.remainingAmount > 0.0 {
@@ -152,6 +157,7 @@ class StoreMenuViewController: UIViewController {
     @IBOutlet weak var buttonCart: UIButton!
     @IBAction func pressCart(_ sender: UIButton) {
         let cartItemsVc = CartItemsTableTableViewController(cart: self.currentCart)
+        cartItemsVc.delegate = self
 //        let nav = UINavigationController(rootViewController: cartItemsVc)
         cartItemsVc.modalPresentationStyle = UIModalPresentationStyle.popover
         if let popover = cartItemsVc.popoverPresentationController {
@@ -271,6 +277,15 @@ extension StoreMenuViewController: BottleCollectionViewCellDelegate {
 extension StoreMenuViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         updatePageIndicator()
+    }
+}
+
+// MARK: - Bottle
+
+extension StoreMenuViewController: CartItemsTableViewControllerDelegate {
+    func cartItems(_ cartItemsController: CartItemsTableTableViewController, didFinishWith cart: Cart) {
+        self.currentCart = cart
+        reloadMenu()
     }
 }
 

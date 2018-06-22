@@ -40,7 +40,10 @@ class BottleTableViewCell: UITableViewCell {
         let bottle = lineItem.item
         imageThumbnail.image = bottle.thumbnail
         labelTitle.text = bottle.title
-        labelPrice.text = "\(bottle.price.stringValue) x \(lineItem.quantity) = \(lineItem.subtotal.stringValue)"
+        labelPrice.text = bottle.price.stringValue
+        
+        self.quantity = lineItem.quantity
+        
     }
     
     // MARK: - IBACTIONS
