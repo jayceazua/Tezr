@@ -13,6 +13,7 @@
 		0FBCFB0920D32D8300F3494E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCFB0720D32D8300F3494E /* LaunchScreen.storyboard */; };
 		E969125420DD74A200F00FF2 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969125320DD74A200F00FF2 /* AVPlayerView.swift */; };
 		E969125620DD74B300F00FF2 /* header-movie-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E969125520DD74B300F00FF2 /* header-movie-1.mp4 */; };
+		E969125820DDB40B00F00FF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969125720DDB40B00F00FF2 /* Constants.swift */; };
 		E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */; };
 		E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */; };
 		E96D50EA20D8DDB90077A4F0 /* BottleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */; };
@@ -52,6 +53,7 @@
 		0FBCFB0A20D32D8300F3494E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E969125320DD74A200F00FF2 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		E969125520DD74B300F00FF2 /* header-movie-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "header-movie-1.mp4"; sourceTree = "<group>"; };
+		E969125720DDB40B00F00FF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsTableTableViewController.swift; sourceTree = "<group>"; };
 		E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleTableViewCell.swift; sourceTree = "<group>"; };
 		E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleTableViewCell.xib; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				E98F0F3620D873D1008545D2 /* UniversalExtensions+Date.swift */,
 				E98F0F3520D873D1008545D2 /* UniversalExtentions.swift */,
 				E98F0F2920D80CC0008545D2 /* View+StackView.swift */,
+				E969125720DDB40B00F00FF2 /* Constants.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,
 				E969125420DD74A200F00FF2 /* AVPlayerView.swift in Sources */,
 				E98F0F3320D855F8008545D2 /* MenuHeaderCollectionReusableView.swift in Sources */,
+				E969125820DDB40B00F00FF2 /* Constants.swift in Sources */,
 				E98F0F2520D80763008545D2 /* BottleCollectionViewCell.swift in Sources */,
 				E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */,
 			);

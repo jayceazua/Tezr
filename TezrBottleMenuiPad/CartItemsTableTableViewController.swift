@@ -12,13 +12,7 @@ protocol CartItemsTableViewControllerDelegate: class {
     func cartItems(_ cartItemsController: CartItemsTableTableViewController, didFinishWith cart: Cart)
 }
 
-//TODO: modify cart and send back to parent vc of changes made to cart
-
 class CartItemsTableTableViewController: UITableViewController {
-    
-//    static func instantiate(with lineItems: [LineItems]) -> Self {
-//        let storyboard = UIStoryboard(
-//    }
     
     var cart: Cart! {
         didSet {
@@ -56,6 +50,7 @@ class CartItemsTableTableViewController: UITableViewController {
         //add buttons
         let submitButton = UIBarButtonItem(title: "Submit", style: .done, target: vc, action: #selector(pressSubmit(_:)))
         let clearButton = UIBarButtonItem(title: "Clear Cart", style: .plain, target: vc, action: #selector(pressClearCart(_:)))
+        clearButton.tintColor = .pink
         let flexiableDivider = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         vc.navigationController!.isToolbarHidden = false
         vc.setToolbarItems([submitButton, flexiableDivider, clearButton], animated: false)
@@ -99,7 +94,8 @@ class CartItemsTableTableViewController: UITableViewController {
     private func initLayout() {
         self.tableView.register(BottleTableViewCell.nib, forCellReuseIdentifier: BottleTableViewCell.identifier)
         self.view.backgroundColor = .black
-        self.tableView.backgroundColor = .black    }
+        self.tableView.backgroundColor = .black
+    }
     
     private func updateTotalLabels() {
         self.title = "Subtotal: \(cart.subtotal.stringValue)"
@@ -110,6 +106,7 @@ class CartItemsTableTableViewController: UITableViewController {
         case .delete:
             let item = itemAt(indexPath)
             cart.setQuantity(for: item, to: 0)
+            updateTotalLabels()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         default: break
         }
