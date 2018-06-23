@@ -36,15 +36,16 @@ class SegmentedButtonView: UIView {
         let textColor: UIColor
     }
     
-    var selectedButtonStyle = SelectedStyle(fontSize: 32.0, textColor: .white)
+    var selectedButtonStyle = SelectedStyle(fontSize: 48, textColor: .white)
     
     var unselectedButtonStyle = SelectedStyle(fontSize: 28.0, textColor: UIColor.white.withAlphaComponent(0.8))
     
     private lazy var scrollView: UIScrollView = {
-        let sc = UIScrollView(frame: CGRect.zero)
+        let sc = UIScrollView()
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.isScrollEnabled = true
         sc.showsHorizontalScrollIndicator = false
+        sc.alwaysBounceHorizontal = true
         
         return sc
     }()
@@ -75,10 +76,6 @@ class SegmentedButtonView: UIView {
 
     // MARK: - RETURN VALUES
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: self.frame.width, height: self.fontSize + self.verticalPadding)
-    }
-    
     // MARK: - VOID METHODS
     
     func reloadButtons() {
@@ -91,6 +88,7 @@ class SegmentedButtonView: UIView {
             button.setTitleWithoutAnimation(aButtonTitle, for: .normal)
             button.tag = index
             button.addTarget(self, action: #selector(pressButton(_:)), for: .touchUpInside)
+            button.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
             
             if index == selectedButtonIndex {
                 button.titleLabel!.font = UIFont.systemFont(ofSize: self.selectedButtonStyle.fontSize)
@@ -108,7 +106,7 @@ class SegmentedButtonView: UIView {
         self.scrollView.addSubview(self.horzStackView)
         horzStackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         horzStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        horzStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: horzStackView.trailingAnchor).isActive = true
         horzStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         let widthConstraint = horzStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         widthConstraint.priority = UILayoutPriority(rawValue: 999)
@@ -125,6 +123,7 @@ class SegmentedButtonView: UIView {
     // MARK: - IBACTIONS
     
     @objc private func pressButton(_ button: UIButton) {
+        self.selectedButtonIndex = button.tag
         delegate?.segmentedButton(self, didPressButtonAt: button.tag)
     }
     
