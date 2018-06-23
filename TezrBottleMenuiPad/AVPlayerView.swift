@@ -22,6 +22,12 @@ class AVPlayerView: UIView {
     private var player : AVPlayer?
     private var avPlayerLayer : AVPlayerLayer?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initLayout()
+    }
+    
     init(frame: CGRect, with resource: String) {
         self.resource = resource
         
