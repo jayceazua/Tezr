@@ -14,9 +14,12 @@
 		E969125420DD74A200F00FF2 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969125320DD74A200F00FF2 /* AVPlayerView.swift */; };
 		E969125620DD74B300F00FF2 /* header-movie-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E969125520DD74B300F00FF2 /* header-movie-1.mp4 */; };
 		E969125820DDB40B00F00FF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969125720DDB40B00F00FF2 /* Constants.swift */; };
+		E969125B20DDB81C00F00FF2 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969125920DDB81C00F00FF2 /* ItemViewController.swift */; };
+		E969125C20DDB81C00F00FF2 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E969125A20DDB81C00F00FF2 /* ItemViewController.xib */; };
 		E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */; };
 		E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */; };
 		E96D50EA20D8DDB90077A4F0 /* BottleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */; };
+		E97197A220DDC0C3009406B2 /* SegmentedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */; };
 		E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0920D737D6008545D2 /* Cart.swift */; };
 		E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0B20D73913008545D2 /* StoreMenu.swift */; };
 		E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
@@ -54,9 +57,12 @@
 		E969125320DD74A200F00FF2 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		E969125520DD74B300F00FF2 /* header-movie-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "header-movie-1.mp4"; sourceTree = "<group>"; };
 		E969125720DDB40B00F00FF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E969125920DDB81C00F00FF2 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		E969125A20DDB81C00F00FF2 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
 		E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsTableTableViewController.swift; sourceTree = "<group>"; };
 		E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleTableViewCell.swift; sourceTree = "<group>"; };
 		E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleTableViewCell.xib; sourceTree = "<group>"; };
+		E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonView.swift; sourceTree = "<group>"; };
 		E98F0F0920D737D6008545D2 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		E98F0F0B20D73913008545D2 /* StoreMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenu.swift; sourceTree = "<group>"; };
 		E98F0F0D20D73C9F008545D2 /* menu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = menu.plist; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 			children = (
 				E98F0F2020D80611008545D2 /* StoreMenuViewController.swift */,
 				E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */,
+				E969125920DDB81C00F00FF2 /* ItemViewController.swift */,
+				E969125A20DDB81C00F00FF2 /* ItemViewController.xib */,
 			);
 			name = "Cart Menu";
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 				E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */,
 				E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */,
 				E969125320DD74A200F00FF2 /* AVPlayerView.swift */,
+				E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */,
 			);
 			name = UICustom;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 				E98F0F3420D855F8008545D2 /* MenuHeaderCollectionReusableView.xib in Resources */,
 				E969125620DD74B300F00FF2 /* header-movie-1.mp4 in Resources */,
 				E98F0F2720D80779008545D2 /* BottleCollectionViewCell.xib in Resources */,
+				E969125C20DDB81C00F00FF2 /* ItemViewController.xib in Resources */,
 				0FBCFB0420D32D8100F3494E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,10 +310,12 @@
 			files = (
 				E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */,
 				E98F0F3020D846FA008545D2 /* Currency.swift in Sources */,
+				E969125B20DDB81C00F00FF2 /* ItemViewController.swift in Sources */,
 				E98F0F2120D80611008545D2 /* StoreMenuViewController.swift in Sources */,
 				E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */,
+				E97197A220DDC0C3009406B2 /* SegmentedButtonView.swift in Sources */,
 				E98F0F3820D873D1008545D2 /* UniversalExtensions+Date.swift in Sources */,
 				E98F0F3720D873D1008545D2 /* UniversalExtentions.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,

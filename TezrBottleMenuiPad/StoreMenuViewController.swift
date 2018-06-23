@@ -212,6 +212,8 @@ class StoreMenuViewController: UIViewController {
 // MARK: UICollectionViewDataSource & Delegate
 
 extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: RETURN VALUES
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         let category = self.menu.categories[collectionView.tag]
         
@@ -256,6 +258,20 @@ extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewD
         
         return cell
     }
+
+    // MARK: VOID METHODS
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = itemAt(indexPath, forCollectionView: collectionView.tag)
+        let vc = ItemViewController.instantiateViewController(item: item)
+        vc.modalPresentationStyle = .formSheet
+        self.present(vc, animated: true)
+    }
+    
+    // MARK: IBACTIONS
+    
+    // MARK: LIFE CYCLE
+
 }
 
 // MARK: BottleCollectionViewCellDelegate
