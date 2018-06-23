@@ -174,6 +174,13 @@ class StoreMenuViewController: UIViewController {
     @IBOutlet weak var labelRemaining: UILabel!
     @IBOutlet weak var labelMinimum: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var segmentedView: SegmentedButtonView! {
+        didSet {
+            segmentedView.buttonTitles = self.menu.categories.map { $0.title }
+        }
+    }
+    
     @IBOutlet weak var scrollViewMenu: UIScrollView!
     @IBOutlet weak var pageIndicator: UIPageControl!
     

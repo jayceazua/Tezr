@@ -19,7 +19,7 @@
 		E96D50E620D8DC660077A4F0 /* CartItemsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */; };
 		E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */; };
 		E96D50EA20D8DDB90077A4F0 /* BottleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */; };
-		E97197A220DDC0C3009406B2 /* SegmentedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */; };
+		E97197A420DDC9CC009406B2 /* SegmentedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97197A320DDC9CC009406B2 /* SegmentedButtonView.swift */; };
 		E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0920D737D6008545D2 /* Cart.swift */; };
 		E98F0F0C20D73913008545D2 /* StoreMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F0B20D73913008545D2 /* StoreMenu.swift */; };
 		E98F0F0E20D73C9F008545D2 /* menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F0D20D73C9F008545D2 /* menu.plist */; };
@@ -62,7 +62,7 @@
 		E96D50E520D8DC660077A4F0 /* CartItemsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsTableTableViewController.swift; sourceTree = "<group>"; };
 		E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleTableViewCell.swift; sourceTree = "<group>"; };
 		E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleTableViewCell.xib; sourceTree = "<group>"; };
-		E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonView.swift; sourceTree = "<group>"; };
+		E97197A320DDC9CC009406B2 /* SegmentedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButtonView.swift; sourceTree = "<group>"; };
 		E98F0F0920D737D6008545D2 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		E98F0F0B20D73913008545D2 /* StoreMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMenu.swift; sourceTree = "<group>"; };
 		E98F0F0D20D73C9F008545D2 /* menu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = menu.plist; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				E96D50E720D8DDB90077A4F0 /* BottleTableViewCell.swift */,
 				E96D50E820D8DDB90077A4F0 /* BottleTableViewCell.xib */,
 				E969125320DD74A200F00FF2 /* AVPlayerView.swift */,
-				E97197A120DDC0C3009406B2 /* SegmentedButtonView.swift */,
+				E97197A320DDC9CC009406B2 /* SegmentedButtonView.swift */,
 			);
 			name = UICustom;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				E98F0F2A20D80CC1008545D2 /* View+StackView.swift in Sources */,
 				E98F0F0A20D737D6008545D2 /* Cart.swift in Sources */,
 				E96D50E920D8DDB90077A4F0 /* BottleTableViewCell.swift in Sources */,
-				E97197A220DDC0C3009406B2 /* SegmentedButtonView.swift in Sources */,
+				E97197A420DDC9CC009406B2 /* SegmentedButtonView.swift in Sources */,
 				E98F0F3820D873D1008545D2 /* UniversalExtensions+Date.swift in Sources */,
 				E98F0F3720D873D1008545D2 /* UniversalExtentions.swift in Sources */,
 				0FBCFAFF20D32D8100F3494E /* AppDelegate.swift in Sources */,

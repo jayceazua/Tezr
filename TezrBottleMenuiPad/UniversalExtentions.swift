@@ -697,6 +697,14 @@ public extension UIDevice {
     }
 }
 
+extension UIView {
+    func removeSubviews() {
+        self.subviews.forEach { (aView) in
+            aView.removeFromSuperview()
+        }
+    }
+}
+
 // MARK: Core Data
 
 extension NSPredicate {
