@@ -216,6 +216,14 @@ class StoreMenuViewController: UIViewController {
     }
 }
 
+// MARK: SegmentedButtonViewDelegate
+
+extension StoreMenuViewController: SegmentedButtonViewDelegate {
+    func segmentedButton(_ segementedButtonView: SegmentedButtonView, didPressButtonAt index: Int) {
+        print(segementedButtonView.buttonTitles[index])
+    }
+}
+
 // MARK: UICollectionViewDataSource & Delegate
 
 extension StoreMenuViewController: UICollectionViewDataSource, UICollectionViewDelegate {

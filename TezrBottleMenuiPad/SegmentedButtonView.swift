@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SegmentedButtonViewDelegate: class {
+@objc protocol SegmentedButtonViewDelegate: class {
     func segmentedButton(_ segementedButtonView: SegmentedButtonView, didPressButtonAt index: Int)
 }
 
@@ -21,7 +21,7 @@ class SegmentedButtonView: UIView {
     
     @IBInspectable var verticalPadding: CGFloat = 8.0
     
-    weak var delegate: SegmentedButtonViewDelegate?
+    @IBOutlet weak var delegate: SegmentedButtonViewDelegate?
     
     var buttonTitles = [String]() {
         didSet {
@@ -30,6 +30,17 @@ class SegmentedButtonView: UIView {
     }
     
     var selectedButtonIndex = 0
+    
+    private(set) var selectedButton: UIButton? {
+        willSet {
+            if let button = selectedButton {
+                deselect(button: button)
+            }
+            if let newButton = newValue {
+                select(button: newButton)
+            }
+        }
+    }
     
     struct SelectedStyle {
         let fontSize: CGFloat
@@ -62,6 +73,8 @@ class SegmentedButtonView: UIView {
         return stackView
     }()
     
+//    private var buttons = [UIButton]()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -81,6 +94,7 @@ class SegmentedButtonView: UIView {
     func reloadButtons() {
         
         self.horzStackView.removeSubviews()
+//        self.buttons.removeAll()
         
         for (index, aButtonTitle) in self.buttonTitles.enumerated() {
             let button = UIButton(type: .system)
@@ -91,14 +105,14 @@ class SegmentedButtonView: UIView {
             button.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
             
             if index == selectedButtonIndex {
-                button.titleLabel!.font = UIFont.systemFont(ofSize: self.selectedButtonStyle.fontSize)
-                button.tintColor = self.selectedButtonStyle.textColor
+                select(button: button)
+                selectedButton = button
             } else {
-                button.titleLabel!.font = UIFont.systemFont(ofSize: self.unselectedButtonStyle.fontSize)
-                button.tintColor = self.unselectedButtonStyle.textColor
+                deselect(button: button)
             }
             
             self.horzStackView.addArrangedSubview(button)
+//            self.buttons.append(button)
         }
     }
     
@@ -120,10 +134,21 @@ class SegmentedButtonView: UIView {
         scrollView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
+    private func select(button: UIButton) {
+        button.titleLabel!.font = UIFont.systemFont(ofSize: self.selectedButtonStyle.fontSize)
+        button.tintColor = self.selectedButtonStyle.textColor
+    }
+    
+    private func deselect(button: UIButton) {
+        button.titleLabel!.font = UIFont.systemFont(ofSize: self.unselectedButtonStyle.fontSize)
+        button.tintColor = self.unselectedButtonStyle.textColor
+    }
+    
     // MARK: - IBACTIONS
     
     @objc private func pressButton(_ button: UIButton) {
         self.selectedButtonIndex = button.tag
+        self.selectedButton = button
         delegate?.segmentedButton(self, didPressButtonAt: button.tag)
     }
     
