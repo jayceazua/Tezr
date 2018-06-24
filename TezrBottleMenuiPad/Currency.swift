@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Currency: Decodable {
+struct Currency: Decodable, Equatable {
     
     var stringValue: String {
         let currencyFormatter = NumberFormatter()

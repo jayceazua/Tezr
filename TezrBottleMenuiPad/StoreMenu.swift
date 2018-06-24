@@ -69,6 +69,12 @@ struct Item: Decodable {
         case sku
     }
     
+    init(title: String, price: Currency, sku: SKU) {
+        self.title = title
+        self.price = price
+        self.sku = sku
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Item.CodingKeys.self)
         let title: String = try container.decode(String.self, forKey: .title)

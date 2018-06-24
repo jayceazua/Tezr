@@ -48,9 +48,9 @@ struct Cart {
     func quantity(for item: Item) -> Int {
         if let foundItemInCart = self.lineItems[item.sku] {
             return foundItemInCart.quantity
-        } else {
-            return 0
         }
+        
+        return 0
     }
     
     // MARK: - VOID METHODS
