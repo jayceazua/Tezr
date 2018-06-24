@@ -29,7 +29,12 @@ class SegmentedButtonView: UIView {
         }
     }
     
-    var selectedButtonIndex = 0
+    var selectedButtonIndex = 0 {
+        willSet {
+            let newSelectedButton = self.buttons[newValue]
+            self.selectedButton = newSelectedButton
+        }
+    }
     
     private(set) var selectedButton: UIButton? {
         willSet {
@@ -73,7 +78,7 @@ class SegmentedButtonView: UIView {
         return stackView
     }()
     
-//    private var buttons = [UIButton]()
+    private var buttons = [UIButton]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,7 +99,7 @@ class SegmentedButtonView: UIView {
     func reloadButtons() {
         
         self.horzStackView.removeSubviews()
-//        self.buttons.removeAll()
+        self.buttons.removeAll()
         
         for (index, aButtonTitle) in self.buttonTitles.enumerated() {
             let button = UIButton(type: .system)
@@ -112,7 +117,7 @@ class SegmentedButtonView: UIView {
             }
             
             self.horzStackView.addArrangedSubview(button)
-//            self.buttons.append(button)
+            self.buttons.append(button)
         }
     }
     

@@ -144,11 +144,25 @@ class StoreMenuViewController: UIViewController {
         labelMinimum.text = currentCart.minimumSubtotal.stringValue
     }
     
+    private func setPage(to index: Int, animated: Bool = true) {
+        let pageWidth = scrollViewMenu.bounds.width
+        let newPageOffset: CGFloat = pageWidth * CGFloat(index)
+        scrollViewMenu.setContentOffset(CGPoint(x: newPageOffset, y: 0), animated: animated)
+        
+        segmentedView.selectedButtonIndex = index
+        
+        pageIndicator.currentPage = index
+    }
+    
     private func updatePageIndicator() {
         let pageWidth = scrollViewMenu.bounds.width
         let contentOffset = scrollViewMenu.contentOffset.x
+        let currentPageIndex = Int(contentOffset / pageWidth)
         
-        pageIndicator.currentPage = Int(contentOffset / pageWidth)
+        pageIndicator.currentPage = currentPageIndex
+        
+        //update segmentedView
+        segmentedView.selectedButtonIndex = currentPageIndex
     }
     
     // MARK: - IBACTIONS
@@ -220,7 +234,7 @@ class StoreMenuViewController: UIViewController {
 
 extension StoreMenuViewController: SegmentedButtonViewDelegate {
     func segmentedButton(_ segementedButtonView: SegmentedButtonView, didPressButtonAt index: Int) {
-        print(segementedButtonView.buttonTitles[index])
+        self.setPage(to: index)
     }
 }
 
