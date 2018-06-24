@@ -98,4 +98,42 @@ class CartTests: XCTestCase {
         cart.setQuantity(for: item, to: 0)
         XCTAssertEqual(cart.lineItems.count, 0)
     }
+    
+    func testWithoutPurging() {
+        var cart = Cart()
+        let store = StoreMenu.localStore
+        let addedItem = store.items[0]
+        
+        //default purging setting quantities
+        cart.setQuantity(for: addedItem, to: 2, withoutPurging: false)
+        XCTAssertEqual(cart.quantity(for: addedItem), 2)
+        
+        //set quantity to zero and do not remove it from the cart
+        cart.setQuantity(for: addedItem, to: 0, withoutPurging: true)
+        XCTAssertEqual(cart.quantity(for: addedItem), 0)
+        XCTAssertEqual(cart.lineItems.count, 1)
+        
+        //purge the cart
+        cart.purgeLineItems()
+        XCTAssertEqual(cart.quantity(for: addedItem), 0)
+        XCTAssertEqual(cart.lineItems.count, 0)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
