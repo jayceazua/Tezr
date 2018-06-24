@@ -31,8 +31,15 @@ class SegmentedButtonView: UIView {
     
     var selectedButtonIndex = 0 {
         willSet {
+            guard newValue < self.buttons.count else {
+                return assertionFailure("out of bounds for selected button index \(newValue)")
+            }
+            
             let newSelectedButton = self.buttons[newValue]
             self.selectedButton = newSelectedButton
+        }
+        didSet {
+            updateScrollView()
         }
     }
     
@@ -119,6 +126,18 @@ class SegmentedButtonView: UIView {
             self.horzStackView.addArrangedSubview(button)
             self.buttons.append(button)
         }
+    }
+    
+    private func updateScrollView() {
+        guard let buttonFrameCenter = self.selectedButton?.center else {
+            return
+        }
+        let scrollViewFrame = self.scrollView.bounds
+        let newCenterOffset = CGPoint(
+            x: buttonFrameCenter.x - scrollViewFrame.width / 2.0,
+            y: 0
+        )
+        self.scrollView.setContentOffset(newCenterOffset, animated: true)
     }
     
     private func initLayout() {

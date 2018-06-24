@@ -42,22 +42,13 @@ class StoreMenuViewController: UIViewController {
         let nCategories = self.menu.categories.count
         
         // create collection views for each category
-        for (index, aCategory) in self.menu.categories.enumerated() {
+        for (index, _) in self.menu.categories.enumerated() {
             
             let vertStackView = UIStackView(
                 axis: .vertical,
                 distribution: .fill,
                 alignment: .fill
             )
-            
-            // category label
-            let categoryLabel = UILabel(frame: CGRect.zero)
-            categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-            categoryLabel.text = aCategory.title
-            categoryLabel.textAlignment = .center
-            categoryLabel.textColor = .white
-            categoryLabel.font = UIFont.preferredFont(forTextStyle: .title2)
-            vertStackView.addArrangedSubview(categoryLabel)
             
             //create collection view layout
             let collectionViewLayout = UICollectionViewFlowLayout()
