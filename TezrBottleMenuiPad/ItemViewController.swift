@@ -10,9 +10,9 @@ import UIKit
 
 class ItemViewController: UIViewController {
     
-    var item: Item!
+    var item: Bottle!
     
-    init(item: Item) {
+    init(item: Bottle) {
         self.item = item
         
         super.init(nibName: "ItemViewController", bundle: nil)
@@ -61,11 +61,27 @@ class ItemViewController: UIViewController {
     
     // MARK: - IBACTIONS
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var labelBottle: UILabel!
+    @IBOutlet weak var textviewBody: UITextView!
+    
+    @IBAction func pressDone(_ button: UIBarButtonItem) {
+        self.presentingViewController!.dismiss(animated: true)
+    }
+    
     // MARK: - LIFE CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Item Details"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.imageView.image = item.thumbnail
+        self.labelBottle.text = item.title
     }
 
 }
