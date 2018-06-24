@@ -29,6 +29,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQf-LL-zXf">
                             <rect key="frame" x="0.0" y="0.0" width="540" height="180"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" secondItem="nQf-LL-zXf" secondAttribute="width" multiplier="1:3" id="v87-bu-jJf"/>
                             </constraints>

@@ -74,7 +74,7 @@ class ItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Item Details"
+        self.title = "Bottle Details"
     }
     
     override func viewWillAppear(_ animated: Bool) {
