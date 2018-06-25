@@ -82,6 +82,7 @@ class ItemViewController: UIViewController {
         
         self.imageView.image = item.thumbnail
         self.labelBottle.text = item.title
+        self.textviewBody.text = item.notes
     }
 
 }

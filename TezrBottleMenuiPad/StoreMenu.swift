@@ -62,17 +62,20 @@ struct Item: Decodable {
     let title: String
     let price: Currency
     let sku: SKU
+    let notes: String
     
     enum CodingKeys: String, CodingKey {
         case title
         case price
         case sku
+        case notes
     }
     
-    init(title: String, price: Currency, sku: SKU) {
+    init(title: String, price: Currency, sku: SKU, notes: String = "") {
         self.title = title
         self.price = price
         self.sku = sku
+        self.notes = notes
     }
     
     init(from decoder: Decoder) throws {
@@ -80,9 +83,11 @@ struct Item: Decodable {
         let title: String = try container.decode(String.self, forKey: .title)
         let sku: SKU = try container.decode(SKU.self, forKey: .sku)
         let priceValue: Double = try container.decode(Double.self, forKey: .price)
+        let notesValue: String = try container.decode(String.self, forKey: .notes)
         
         self.title = title
         self.sku = sku
         self.price = Currency(priceValue)
+        self.notes = notesValue
     }
 }

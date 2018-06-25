@@ -16,6 +16,7 @@ protocol Bottle {
     var title: String { get }
     var price: Currency { get }
     var thumbnail: UIImage { get }
+    var notes: String { get }
 }
 
 class BottleCollectionViewCell: UICollectionViewCell {
