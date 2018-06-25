@@ -29,7 +29,19 @@ class SegmentedButtonView: UIView {
         }
     }
     
-    var selectedButtonIndex = 0
+    var selectedButtonIndex = 0 {
+        willSet {
+            guard newValue < self.buttons.count else {
+                return assertionFailure("out of bounds for selected button index \(newValue)")
+            }
+            
+            let newSelectedButton = self.buttons[newValue]
+            self.selectedButton = newSelectedButton
+        }
+        didSet {
+            updateScrollView()
+        }
+    }
     
     private(set) var selectedButton: UIButton? {
         willSet {
@@ -73,7 +85,7 @@ class SegmentedButtonView: UIView {
         return stackView
     }()
     
-//    private var buttons = [UIButton]()
+    private var buttons = [UIButton]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,7 +106,7 @@ class SegmentedButtonView: UIView {
     func reloadButtons() {
         
         self.horzStackView.removeSubviews()
-//        self.buttons.removeAll()
+        self.buttons.removeAll()
         
         for (index, aButtonTitle) in self.buttonTitles.enumerated() {
             let button = UIButton(type: .system)
@@ -112,8 +124,20 @@ class SegmentedButtonView: UIView {
             }
             
             self.horzStackView.addArrangedSubview(button)
-//            self.buttons.append(button)
+            self.buttons.append(button)
         }
+    }
+    
+    private func updateScrollView() {
+        guard let buttonFrameCenter = self.selectedButton?.center else {
+            return
+        }
+        let scrollViewFrame = self.scrollView.bounds
+        let newCenterOffset = CGPoint(
+            x: buttonFrameCenter.x - scrollViewFrame.width / 2.0,
+            y: 0
+        )
+        self.scrollView.setContentOffset(newCenterOffset, animated: true)
     }
     
     private func initLayout() {

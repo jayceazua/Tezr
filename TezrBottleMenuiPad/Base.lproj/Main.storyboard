@@ -39,10 +39,10 @@
                                                 <rect key="frame" x="16" y="8" width="736" height="96"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WPH-ws-GXc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="389.5" height="96"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="467" height="96"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Chris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-Qo-2dj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="389.5" height="70.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Eduardo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-Qo-2dj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="467" height="70.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="59"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>

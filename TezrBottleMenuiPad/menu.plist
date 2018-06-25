@@ -9,6 +9,53 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>Dom Perignon</string>
+				<key>items</key>
+				<array>
+					<dict>
+						<key>sku</key>
+						<string>166</string>
+						<key>title</key>
+						<string>Dom Brut Millésimé</string>
+						<key>price</key>
+						<integer>925</integer>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>174</string>
+						<key>title</key>
+						<string>Dom Rosé Brut Millésimé</string>
+						<key>price</key>
+						<real>1600</real>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>182</string>
+						<key>title</key>
+						<string>Dom Brut Millésimé Magnum</string>
+						<key>price</key>
+						<real>1750</real>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>190</string>
+						<key>title</key>
+						<string>Dom Rosé Brut Millésimé Magnum</string>
+						<key>price</key>
+						<real>2995</real>
+					</dict>
+					<dict>
+						<key>sku</key>
+						<string>198</string>
+						<key>title</key>
+						<string>Dom Brut Millésimé Jeroboam</string>
+						<key>price</key>
+						<real>7500</real>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>Armand De Brignac</string>
 				<key>items</key>
 				<array>
@@ -153,53 +200,6 @@
 						<string>Belaire Rosé</string>
 						<key>price</key>
 						<integer>500</integer>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>Dom Perignon</string>
-				<key>items</key>
-				<array>
-					<dict>
-						<key>sku</key>
-						<string>166</string>
-						<key>title</key>
-						<string>Dom Brut Millésimé</string>
-						<key>price</key>
-						<integer>925</integer>
-					</dict>
-					<dict>
-						<key>sku</key>
-						<string>174</string>
-						<key>title</key>
-						<string>Dom Rosé Brut Millésimé</string>
-						<key>price</key>
-						<real>1600</real>
-					</dict>
-					<dict>
-						<key>sku</key>
-						<string>182</string>
-						<key>title</key>
-						<string>Dom Brut Millésimé Magnum</string>
-						<key>price</key>
-						<real>1750</real>
-					</dict>
-					<dict>
-						<key>sku</key>
-						<string>190</string>
-						<key>title</key>
-						<string>Dom Rosé Brut Millésimé Magnum</string>
-						<key>price</key>
-						<real>2995</real>
-					</dict>
-					<dict>
-						<key>sku</key>
-						<string>198</string>
-						<key>title</key>
-						<string>Dom Brut Millésimé Jeroboam</string>
-						<key>price</key>
-						<real>7500</real>
 					</dict>
 				</array>
 			</dict>

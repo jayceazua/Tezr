@@ -11,19 +11,23 @@ import XCTest
 
 class CartTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testCartInit() {
         let cart = Cart()
         XCTAssertEqual(cart.lineItems.count, 0)
+        XCTAssertEqual(cart.subtotal, 0.0)
+        XCTAssertEqual(cart.items.count, 0)
+    }
+    
+    func testSubtotal() {
+        var cart = Cart()
+        let item80 = Item(title: "80 bucks", price: 80.0, sku: "123")
+        let item20 = Item(title: "20 bucks", price: 20.0, sku: "321")
+        
+        cart.increment(item: item80)
+        cart.increment(item: item20)
+        
+        //subtotal is 100 bucks
+        XCTAssertEqual(cart.subtotal, 100.0)
     }
     
     func testAddItemToCart() {
@@ -70,10 +74,30 @@ class CartTests: XCTestCase {
         cart.increment(item: item)
         XCTAssertEqual(cart.items.count, 1)
         XCTAssertEqual(cart.quantity(for: item), 1)
+        cart.increment(item: item)
         
+        //decrement but not remove the item
+        cart.decrement(item: item)
+        XCTAssertEqual(cart.items.count, 1)
+        XCTAssertEqual(cart.quantity(for: item), 1)
+        
+        //decrement again, setting the quanitiy to zero, thus removing it
         cart.decrement(item: item)
         XCTAssertEqual(cart.items.count, 0)
         XCTAssertEqual(cart.quantity(for: item), 0)
+    }
+    
+    func testClearCart() {
+        var cart = Cart()
+        let store = StoreMenu.localStore
+        let item = store.items[0]
+        
+        cart.increment(item: item)
+        
+        //clear cart
+        cart.clearItems()
+        XCTAssertEqual(cart.quantity(for: item), 0)
+        XCTAssertEqual(cart.lineItems.count, 0)
     }
     
     func testSettingItemQuantities() {
@@ -98,4 +122,42 @@ class CartTests: XCTestCase {
         cart.setQuantity(for: item, to: 0)
         XCTAssertEqual(cart.lineItems.count, 0)
     }
+    
+    func testWithoutPurging() {
+        var cart = Cart()
+        let store = StoreMenu.localStore
+        let addedItem = store.items[0]
+        
+        //default purging setting quantities
+        cart.setQuantity(for: addedItem, to: 2, withoutPurging: false)
+        XCTAssertEqual(cart.quantity(for: addedItem), 2)
+        
+        //set quantity to zero and do not remove it from the cart
+        cart.setQuantity(for: addedItem, to: 0, withoutPurging: true)
+        XCTAssertEqual(cart.quantity(for: addedItem), 0)
+        XCTAssertEqual(cart.lineItems.count, 1)
+        
+        //purge the cart
+        cart.purgeLineItems()
+        XCTAssertEqual(cart.quantity(for: addedItem), 0)
+        XCTAssertEqual(cart.lineItems.count, 0)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
