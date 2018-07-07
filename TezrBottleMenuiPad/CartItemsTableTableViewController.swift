@@ -121,9 +121,20 @@ class CartItemsTableTableViewController: UITableViewController {
     }
     
     @objc private func pressClearCart(_ button: UIBarButtonItem) {
-        self.cart.clearItems()
-        self.updateTotalLabels()
-        self.tableView.reloadSections([0], with: .automatic)
+        let alert = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
+            .addButton(title: "Clear Cart", style: .destructive) { [weak self] (_) in
+                self?.cart.clearItems()
+                self?.updateTotalLabels()
+                self?.tableView.reloadSections([0], with: .automatic)
+            }
+            .addCancelButton()
+        
+        guard let alertPopover = alert.popoverPresentationController else {
+            return assertionFailure("failed to create popover")
+        }
+        
+        alertPopover.barButtonItem = button
+        self.present(alert, animated: true)
     }
     
     // MARK: - LIFE CYCLE
