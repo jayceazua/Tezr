@@ -98,7 +98,7 @@ class CartItemsTableTableViewController: UITableViewController {
     }
     
     private func updateTotalLabels() {
-        self.title = "Subtotal: \(cart.subtotal.stringValue)"
+        self.title = "Total: \(cart.total.stringValue)"
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

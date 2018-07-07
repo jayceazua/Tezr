@@ -126,7 +126,8 @@ class StoreMenuViewController: UIViewController {
      update subtotal and remaning balance amounts
      */
     private func updateTotalLabels() {
-        labelTotal.text = currentCart.subtotal.stringValue
+        labelSubtotal.text = currentCart.subtotal.stringValue
+        
         if currentCart.remainingAmount > 0.0 {
             labelRemaining.text = currentCart.remainingAmount.stringValue
         } else {
@@ -175,9 +176,19 @@ class StoreMenuViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var labelTotal: UILabel!
+    @IBOutlet weak var labelSubtotal: UILabel!
     @IBOutlet weak var labelRemaining: UILabel!
-    @IBOutlet weak var labelMinimum: UILabel!
+    
+    @IBOutlet weak var labelMinimum: UILabel! {
+        didSet {
+            guard let doubleTitle = Double(labelMinimum.text?.replacingOccurrences(of: "$", with: "").replacingOccurrences(of: ",", with: "") ?? "0") else {
+                return assertionFailure("labelMinimum.text does not contain a number")
+            }
+            
+            self.currentCart.minimumSubtotal = Currency(doubleTitle)
+        }
+    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var segmentedView: SegmentedButtonView! {

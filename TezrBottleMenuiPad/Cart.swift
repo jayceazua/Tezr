@@ -17,6 +17,18 @@ struct Cart {
         return self.lineItems.reduce(0.0) { $0 + $1.value.subtotal }
     }
     
+    var tax: Currency {
+        return subtotal * 0.1054
+    }
+    
+    var serviceCharge: Currency {
+        return subtotal * 0.013354
+    }
+    
+    var total: Currency {
+        return subtotal + serviceCharge + tax
+    }
+    
     var remainingAmount: Currency {
         return minimumSubtotal - subtotal
     }

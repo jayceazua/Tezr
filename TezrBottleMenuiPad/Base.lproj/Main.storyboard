@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Delegate-->
+        <!--Store Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StoreMenuViewController" customModule="TezrBottleMenuiPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Store Menu" customClass="StoreMenuViewController" customModule="TezrBottleMenuiPad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5Qj-Gy-72x">
-                                                                <rect key="frame" x="0.0" y="70.5" width="237.5" height="25.5"/>
+                                                                <rect key="frame" x="0.0" y="70.5" width="240" height="25.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your minimum is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ms-xe-uOJ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="149" height="25.5"/>
@@ -56,8 +56,8 @@
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsc-oF-XWD">
-                                                                        <rect key="frame" x="157" y="0.0" width="80.5" height="25.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsc-oF-XWD">
+                                                                        <rect key="frame" x="157" y="0.0" width="83" height="25.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                         <color key="textColor" red="1" green="0.25098039215686274" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -67,10 +67,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="8Iy-lE-SdF">
-                                                        <rect key="frame" x="495.5" y="0.0" width="240.5" height="113"/>
+                                                        <rect key="frame" x="479" y="0.0" width="257" height="113"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5St-IZ-b6p">
-                                                                <rect key="frame" x="62.5" y="0.0" width="178" height="25.5"/>
+                                                                <rect key="frame" x="79" y="0.0" width="178" height="25.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-6d-IbC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="25.5"/>
@@ -93,7 +93,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KTA-YD-tcp">
-                                                                <rect key="frame" x="78.5" y="25.5" width="162" height="18"/>
+                                                                <rect key="frame" x="95" y="25.5" width="162" height="18"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Remaining:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-3a-Ai7">
                                                                         <rect key="frame" x="0.0" y="0.0" width="76" height="18"/>
@@ -109,14 +109,14 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="*Does NOT include 33% svc charge + gratuity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-sN-AN1">
-                                                                <rect key="frame" x="0.0" y="43.5" width="240.5" height="13.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="*Does NOT include 32.54% svc charge + gratuity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-sN-AN1">
+                                                                <rect key="frame" x="0.0" y="43.5" width="257" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <searchBar userInteractionEnabled="NO" contentMode="redraw" verticalCompressionResistancePriority="1000" searchBarStyle="minimal" placeholder="Search for.." translatesAutoresizingMaskIntoConstraints="NO" id="JDM-n4-Nvp">
-                                                                <rect key="frame" x="0.5" y="57" width="240" height="56"/>
+                                                                <rect key="frame" x="0.5" y="57" width="256.5" height="56"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </searchBar>
                                                         </subviews>
@@ -174,7 +174,7 @@
                         <outlet property="labelHeader" destination="Zkr-Qo-2dj" id="5Y3-1k-aei"/>
                         <outlet property="labelMinimum" destination="lsc-oF-XWD" id="4CR-Nk-NpZ"/>
                         <outlet property="labelRemaining" destination="k2K-5g-YLM" id="a2S-1y-bMm"/>
-                        <outlet property="labelTotal" destination="HYU-NJ-HFK" id="7Mn-cX-YNl"/>
+                        <outlet property="labelSubtotal" destination="HYU-NJ-HFK" id="PB0-28-Azd"/>
                         <outlet property="pageIndicator" destination="AOT-gK-QGG" id="kie-Nv-gs1"/>
                         <outlet property="playerHeaderMovie" destination="wsB-Vt-oFb" id="fSH-0A-gn5"/>
                         <outlet property="scrollViewMenu" destination="3gx-Nx-NtB" id="G07-Lj-NNN"/>
