@@ -11,6 +11,8 @@ import Foundation
 
 struct Cart {
     
+    var customerName: String = "Unnamed"
+    
     var minimumSubtotal: Currency = 10_000.00
     
     var subtotal: Currency {

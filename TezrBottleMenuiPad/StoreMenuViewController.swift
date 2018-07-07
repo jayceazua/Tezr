@@ -122,6 +122,10 @@ class StoreMenuViewController: UIViewController {
 //        fatalError("\(#function) not implemented")
 //    }
     
+    private func updateCustomerName() {
+        labelHeader.text = "Welcome, \(currentCart.customerName)"
+    }
+    
     /**
      update subtotal and remaning balance amounts
      */
@@ -162,6 +166,29 @@ class StoreMenuViewController: UIViewController {
     @IBOutlet weak var playerHeaderMovie: AVPlayerView!
     
     @IBOutlet weak var labelHeader: UILabel!
+    @IBAction func doubleTapHeader(_ sender: Any) {
+        let alertName = UIAlertController(title: "Name", message: "enter a name", preferredStyle: .alert)
+        alertName.addConfirmationButton(title: "Update") { [weak self] (_) in
+            guard let unwrappedSelf = self else { return }
+            guard
+                let textField = alertName.textFields?.first,
+                let newName = textField.text
+                else {
+                    return
+            }
+            
+            unwrappedSelf.currentCart.customerName = newName
+            unwrappedSelf.updateCustomerName()
+        }
+        alertName.addTextField { [weak self] (textField) in
+            guard let unwrappedSelf = self else { return }
+
+            textField.placeholder = "customer name"
+            textField.autocapitalizationType = .words
+            textField.text = unwrappedSelf.currentCart.customerName
+        }
+        self.present(alertName, animated: true)
+    }
     
     @IBOutlet weak var buttonCart: UIButton!
     @IBAction func pressCart(_ sender: UIButton) {
@@ -187,6 +214,31 @@ class StoreMenuViewController: UIViewController {
             
             self.currentCart.minimumSubtotal = Currency(doubleTitle)
         }
+    }
+    @IBAction func doubleTapMinimum(_ sender: Any) {
+        let alertMinimum = UIAlertController(title: "Minimum", message: "enter a new amount", preferredStyle: .alert)
+        alertMinimum.addConfirmationButton(title: "Update") { [weak self] (_) in
+            guard let unwrappedSelf = self else { return }
+            guard
+                let textField = alertMinimum.textFields?.first,
+                let newAmount = Double(textField.text ?? "0")
+                else {
+                    
+                    UIAlertController(title: "Update Minimum", message: "invalid amount", preferredStyle: .alert)
+                        .addDismissButton()
+                        .present(in: unwrappedSelf)
+                    
+                    return
+                }
+            
+            unwrappedSelf.currentCart.minimumSubtotal = Currency(newAmount)
+            unwrappedSelf.updateTotalLabels()
+        }
+        alertMinimum.addTextField { (textField) in
+            textField.placeholder = "minimum amount"
+            textField.keyboardType = .numberPad
+        }
+        self.present(alertMinimum, animated: true)
     }
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -218,6 +270,8 @@ class StoreMenuViewController: UIViewController {
         super.viewWillAppear(animated)
         
         reloadMenu()
+        
+        updateCustomerName()
         
         updateTotalLabels()
     }
